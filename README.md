@@ -198,7 +198,6 @@ $ sudo bash -c 'cat << EOF > /etc/wsl.conf
 [network]
 generateHosts = true
 generateResolvConf = true
-
 [user]
 default=siteconnect
 EOF'
