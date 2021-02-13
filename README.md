@@ -48,38 +48,40 @@ and do the customization in our own project distribution (siteconnect).
 
 ## Workfolder
 
+Create the folloing folder on your C Drive:
+
 ```bach
 C:\Distributions
 ```
 ## Prepare
 
-Start Ubuntu 18.04 LTS
-Create common user:
-    - username: ubuntu
-    - password: ubuntu
+Start Ubuntu 18.04 LTS and use the folloing username/password combination.
+Feel free to change the password on you own choise. Keep in mind you maybe
+need this password at a later point. Write it down or save it in secured place.
 
-Add the User to the "sudo" permissions to use no password:
-- $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
+```
+Username: ubuntu
+Password: ubuntu
+````
 
-Install helpfull tools:
-- sudo apt-get update
-- sudo apt-get install -y install vim curl git tree wget 
+After the initial start of Ubuntu and finalizing the configuration you can  
+go ahead and set the user ```ubuntu``` in a special **sudo** status.
+This avoids the password question, if you execute commands that nedds **root** permissions.
 
-Generate SSH Key for user "ubuntu"
-- ssh-keygen -t rsa -b 4096 -C "ubuntu"
-  | if not necessary, don't set a password for the SSH key
-  | it is less secure but easyer to handle
+``bash
+$ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
+```
 
-Create a ./ssh/config file
-- bash -c 'cat << EOF > ~/.ssh/config
-  Host *
-   ForwardAgent  yes
-   UseKeychain yes
-   IdentityFile ~/.ssh/id_rsa
-  EOF'
-- eval "$(ssh-agent -s)"
+Next step is to install following packages:
 
-Exit the Ubuntu Distributions
+```bash
+$ sudo apt-get update
+$ sudo apt-get install -y install vim curl git tree wget 
+```
+
+Feel free to add more if you think is makes sense to have them in your template.
+
+After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
 
 ## Clone
 
