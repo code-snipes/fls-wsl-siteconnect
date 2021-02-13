@@ -49,7 +49,6 @@ and do the customization in our own project distribution (siteconnect).
 ## Workfolder
 
 Create the folloing folder on your C Drive:
-
 ```bach
 C:\Distributions
 ```
@@ -67,13 +66,11 @@ Password: ubuntu
 After the initial start of Ubuntu and finalizing the configuration you can go ahead 
 and set the user ```ubuntu``` in a special **sudo** status.
 This avoids the password question, if you execute commands that nedds **root** permissions.
-
 ```bash
 $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
 ```
 
 Next step is to install the following packages:
-
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install -y install vim curl git tree wget 
@@ -95,11 +92,8 @@ Steps will be:
 ### Export
 
 This step will create a template for the final **Project Distribution**.
-
 It simply exports the customized ```Ubuntu 18.04 LTS```.
-
 All commands needs to get applied in a **PowerShell** command shell.
-
 ```pws
 c:\ps> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
@@ -109,25 +103,21 @@ c:\ps> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 Now we can create our ```Project Distribution```
 
 It creates a clone of the exported Template of the last [step](#export)
-
 ```pws
 c:\ps> wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
 Making our life easy, let's set the ```Project Distibution``` as default.
-
 ```pws
 c:\ps> wsl.exe --set-default siteconnect-ubuntu-18.04
 ```
 
 You can check the success by typing:
-
 ```pws
 c:\ps> wsl.exe --list --verbose
 ```
 
 The Output of this command should show you something like:
-
 ```bash
 NAME                        STATE           VERSION
 * siteconnect-ubuntu-18.04    Running         2
@@ -140,37 +130,71 @@ The ```*``` maked Distibution is the default.
 
 ## Customize
 
-Start (login) to "siteconnect-ubuntu-18.04" as user "ubuntu"
-- wsl.exe --user ubuntu
+Now we start the new created ```siteconnect-ubuntu-18.04``` Distribution the first time.
+```pws
+c:\ps> wsl.exe --user ubuntu
+```
 
-Create user "siteconnect"
-- sudo groupadd -r siteconnect
-- sudo useradd -m -r -g siteconnect -d /home/siteconnect -s /bin/bash -c "SiteConnect User Account" siteconnect
-- sudo usermod -aG sudo siteconnect
-- sudo bash -c "echo 'siteconnect ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/siteconnect"
-- exit
+After a successfull start and login crate a new user **siteconnect** with the same
+special **sudo** settings as we did with the **ubuntu** user.
+```bash
+$ sudo groupadd -r siteconnect
+$ sudo useradd -m -r -g siteconnect -d /home/siteconnect -s /bin/bash -c "SiteConnect User Account" siteconnect
+$ sudo usermod -aG sudo siteconnect
+$ sudo bash -c "echo 'siteconnect ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/siteconnect"
+```
 
-Start (login) to "siteconnect-ubuntu-18.04" as user "siteconnect"
-- wsl.exe --user siteconnect
+If the commands are done go and ```exit``` the Distribution again.
 
-Generate SSH Key for user "siteconnect"
+Now we will login with the new created user **siteconnect** and finalize the customization.
+
+```pws
+c:\ps> wsl.exe --user siteconnect
+```
+
+> IMPORTANT:
+>  
+> Be sure, you are in the linux-home-directory of the user **siteconnect**.
+> YOu can test this by typing ```pwd```. You should get an output: ```/home/siteconnect```.
+> If you are in another folder, use ```cd``` to jump to the linux-home-directory.
+> Be sure you are in the right folder, before you go ahed.
+
+Generate SSH Key for user **siteconnect**
+```bash
 - ssh-keygen -t rsa -b 4096 -C "siteconnect"
-  | if not necessary, don't set a password for the SSH key
-  | it is less secure but easyer to handle
+```
+
+Aternatively, you can also use an already created SSH key
+if you have one you normaly use. Feel free and copy this key for the
+user **siteconnect**
 
 Create a ./ssh/config file
-- sudo bash -c 'cat << EOF > ~/.ssh/config
+```bash
+$ sudo bash -c 'cat << EOF > ~/.ssh/config
 Host *
  ForwardAgent  yes
  UseKeychain yes
  IdentityFile ~/.ssh/id_rsa
 EOF'
-- eval "$(ssh-agent -s)"
+```
 
-https://docs.microsoft.com/en-us/windows/wsl/wsl-config
+Usind the ```-A``` option to forward the key to another SSH session,
+you need to enable the **ssh-agent** every time, before you do the SSH login.
+Here an example of how to enable it:
 
-Create /etc/wsl.conf with defaults
-- sudo bash -c 'cat << EOF > /etc/wsl.conf
+```bash
+eval "$(ssh-agent -s)"
+```
+
+As a last step, we need to create a **wsl.conf** file.
+Here we can set default of the Distribution.
+
+Find detailed information about the posibilties here:
+- [WSL commands and launch configurations](https://docs.microsoft.com/en-us/windows/wsl/wsl-config)
+
+Create /etc/wsl.conf with defaults:
+```bash
+$ sudo bash -c 'cat << EOF > /etc/wsl.conf
 [network]
 generateHosts = true
 generateResolvConf = true
@@ -178,9 +202,26 @@ generateResolvConf = true
 [user]
 default=siteconnect
 EOF'
+```
 
-After applying, EXIT the Distribution and terminate it:
-- wsl.exe --terminate siteconnect-ubuntu-18.04
+After applying, **exit** the Distribution and **terminate** it with the following command:
+```pws
+c:\ps> wsl.exe --terminate siteconnect-ubuntu-18.04
+```
+
+> IMPORTANT: 
+> 
+> If you change/add somthing in  **/etc/wsl.conf** the Distribution needs to get
+> **teminated**. This command does a complete shutdown of the Distribution. If you reconnect 
+> to it, it is like a reboot. The settings in the configuration file getting adapted by this reboot.
+
+Restart the ```siteconnect-ubuntu-18.04``` Distribution by simply type:
+```pws
+c:\ps> wsl.exe
+```
+
+You might realize, the login user is now **siteconnect**.
+
 
 Install native Postgres client:
 sudo apt-get install -y postgresql-client
