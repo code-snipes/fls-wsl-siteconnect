@@ -68,7 +68,7 @@ After the initial start of Ubuntu and finalizing the configuration you can
 go ahead and set the user ```ubuntu``` in a special **sudo** status.
 This avoids the password question, if you execute commands that nedds **root** permissions.
 
-``bash
+```bash
 $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
 ```
 
