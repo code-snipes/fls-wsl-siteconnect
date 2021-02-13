@@ -52,7 +52,7 @@ This will be our place to save our modifications.
 
 [BACK](#Deployment-Steps)
 
-# Preparing WSL Ubuntu 18.04.LTS
+# Preparing WSL Ubuntu 18.04 LTS
 
 As a kind of **Best-Praxis** we will clone the ```Ubuntu 18.04 LTS``` distribution
 and do the customization in our own project distribution (siteconnect).
