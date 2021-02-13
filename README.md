@@ -95,6 +95,7 @@ Steps will be:
 ### Export
 
 This step will create a template for the final **Project Distribution**.
+
 It simply exports the customized ```Ubuntu 18.04 LTS```.
 
 All commands needs to get applied in a **PowerShell** command shell.
@@ -113,7 +114,7 @@ It creates a clone of the exported Template of the last [step](#export)
 c:\ps> wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
-Doing forther actions and to make our life ease, let's set the ```Project Distibution``` as default.
+Making our life easy, let's set the ```Project Distibution``` as default.
 
 ```pws
 c:\ps> wsl.exe --set-default siteconnect-ubuntu-18.04
@@ -215,6 +216,8 @@ psql -h `ip route show | awk '{print $3}' | head -n 1` -p 5432 -U siteconnect
 --> \q
 
 Test NODE code (with Ev. Variable):
+
+```node
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL
 const pool = new Pool({
@@ -232,8 +235,4 @@ client.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
     client.end()
     })
-
-touch /etc/profile.d/java_paths.sh && \
-echo "export JAVA_HOME=/usr/java/${JAVA_VERSION}" > /etc/profile.d/java_paths.sh && \
-echo "export CLASSPATH=.:/usr/java/latest/lib/tools.jar:/usr/java/latest/lib/dt.jar" >> /etc/profile.d/java_paths.sh && \
-echo "export PATH=$PATH:/usr/java/latest/jre/bin:/usr/java/latest/jre/bin/" >> /etc/profile.d/java_paths.sh
+```
