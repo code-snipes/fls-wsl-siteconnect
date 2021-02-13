@@ -51,7 +51,7 @@ and do the customization in our own project distribution (siteconnect).
         - [Generate SSH Key](#Generate-SSH-Key)
         - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
         - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
-- [Install Node.JS](#Install-Node.JS)
+        - [Set up Node.JS](#Set-up-Node.JS)
 
 # Create a work Folder
 
@@ -61,6 +61,8 @@ C:\Distributions
 ```
 
 This will be our place to save our modifications.
+
+[Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
 
 # Prepare the Ubuntu 18.04 LTS Distribution for cloning
 
@@ -90,6 +92,8 @@ Feel free to add more if you think it makes sense to have them in your template.
 
 After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
 
+[Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
+
 # Build a Distribution Template
 
 Best praxis is always to build a dedicated Distribution for your project.
@@ -106,6 +110,8 @@ All commands needs to get applied in a **PowerShell** command shell.
 ```pws
 PS C:\> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
+
+[Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
 
 # Deoploy a Project Distribution
 
@@ -243,7 +249,7 @@ PS C:\> wsl.exe
 You might realize, the login user is now **siteconnect**.
 We achived this by setting the default username to **siteconnect**.
 
-# Install Node.JS
+## Set up Node.JS
 
 Now we are ready to install NodeJS into the Distribution.
 I simply followed the description on:
@@ -263,6 +269,8 @@ $ npm install pg
 ```
 
 We are now ready to go with the WSL Distribution!
+
+[Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
 
 # Docker Container
 
