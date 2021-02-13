@@ -9,7 +9,11 @@
 # Deployment Steps
 
 - [Prerequistes](#Prerequistes)
-- [Create a work Folder](#Create-a-work-folder)
+- [Docker Container](#Docker-Container)
+    - [Some Explainations]()
+    - [Build the Postgres container](#)
+    - [Verify the Database with DBeaver](#)
+- [Create a Distribution work Folder](#Create-a-distribution-work-folder)
 - [Preparing WSL Ubuntu 18.04 LTS](#Preparing-WSL-Ubuntu-1804-LTS)
 - [Build a Distribution Template](#Build-a-Distribution-Template)
     - [Export the Template](#Export-the-Template)
@@ -21,7 +25,7 @@
         - [Create ./ssh/config](#Create-sshconfig)
         - [Create /etc/wsl.conf](#Create-etcwslconf)
         - [Set up Node.JS](#Set-up-NodeJS)
-- [Docker Container](#Docker-Container)
+        - [Postrgres Database Connect](#Postgres-Database-Connect)
 # Prerequistes
 
 All the following applications needs to be installed before you begin.
@@ -41,7 +45,7 @@ All the following steps needs a [```PowerShell```](https://www.digitalcitizen.li
 Use the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
 
 [BACK](#Deployment-Steps)
-# Create a work Folder
+# Create a Distribution work Folder
 
 Create the following folder on your C Drive:
 ```bach
@@ -79,7 +83,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y install vim curl git tree wget postgresql-client
 ```
 
-Feel free to add more if you think it makes sense to have them in your template.
+Feel free to add more packages of you choise if you think it makes sense to have them in your template.
 
 After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
 
@@ -273,6 +277,34 @@ $ npm install pg
 
 [BACK](#Deployment-Steps)
 
+## Postrgres Database Connect
+
+Before we check the setup with Visual Studio Code, we need to set the Database connection.
+
+Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) **DATABASE_URL** in **.bashrc** (siteconnect user only):
+```bash
+$ bash -c 'cat << EOF >> ~/.bashrc
+GATEWAY_IP=`ip route show | awk '{print $3}' | head -n 1`
+export DATABASE_URL=postgresql://siteconnect:siteconnect@$GATEWAY_IP:5432/siteconnect
+EOF'
+```
+
+> EXPLAINATION:
+> Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely.
+> This means, we need to point it to the Gateway IP of the WSL envirment. Adding **DATABASE_URL**
+> to the **.bashrc** keeps it persistent.
+
+Verfy the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
+
+Check it with:
+```bash
+$ echo $DATABASE_URL
+```
+
+This shold output: ```postgresql://siteconnect:siteconnect@<YourGatewayIP>:5432/siteconnect```
+
+[BACK](#Deployment-Steps)
+
 # Docker Container
 
 The next part descips how we run the **postgres** databse in a Docker container.
@@ -350,32 +382,6 @@ b8f0874826c6   postgres:10   "docker-entrypoint.s…"   5 hours ago   Up 5 hours
 ```
 
 The Container runs successfully, If your output of ```docker container ls``` is simual to the one above.
-
-# Database Connect
-
-Before we check the setup with Visual Studio Code, we need to set the Database connection.
-
-Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) **DATABASE_URL** in **.bashrc** (siteconnect user only):
-```bash
-$ bash -c 'cat << EOF >> ~/.bashrc
-GATEWAY_IP=`ip route show | awk '{print $3}' | head -n 1`
-export DATABASE_URL=postgresql://siteconnect:siteconnect@$GATEWAY_IP:5432/siteconnect
-EOF'
-```
-
-> EXPLAINATION:
-> Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely.
-> This means, we need to point it to the Gateway IP of the WSL envirment. Adding **DATABASE_URL**
-> to the **.bashrc** keeps it persistent.
-
-Verfy the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
-
-Check it with:
-```bash
-$ echo $DATABASE_URL
-```
-
-This shold output: ```postgresql://siteconnect:siteconnect@<YourGatewayIP>:5432/siteconnect```
 
 # Verify
 
