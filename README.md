@@ -6,15 +6,22 @@
 
 ![Setup](https://lucid.app/publicSegments/view/74aff30f-a632-4245-b004-4338cb8d9fcc/image.png)
 
-**Components:**
+# Deployment Steps
 
-- Visual Studio Code
-- Microsoft's WSL (linux core system)
-- Docker Desktop
-- DBeaver (Univeral Database Client)
-- Postgres Database (Docker Container)
-- Ubnutu 18.04 LTS (WSL Distribution)
-
+- [Prerequistes](#Prerequistes)
+- [Create a work Folder](#Create-a-work-folder)
+- [Preparing WSL Ubuntu 18.04.LTS](#Preparing-WSL-Ubuntu-18.04.LTS)
+- [Build a Distribution Template](#Build-a-Distribution-Template)
+    - [Export the Template](#Export-the-Template)
+    - [Deploy your Distribution](#Deploy-your-Distribution)
+    - [Customize your Distribution](#Customize-your-Distribution)
+- [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
+    - [Customize the Distribution](#Customize-the-Distribution)
+        - [Generate SSH Key](#Generate-SSH-Key)
+        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
+        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
+        - [Set up Node.JS](#Set-up-Node.JS)
+- [Docker Container](#Docker-Container)
 # Prerequistes
 
 All the following applications needs to be installed before you begin.
@@ -30,29 +37,10 @@ Follow the Installation Guides of each Application.
 
 Further explaination integrates each of the applications into the devlopement environment.
 
-# Preparing WSL Ubuntu 18.04.LTS
-
 All the following steps needs a [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
-
 Use the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
 
-As a kind of **Best-Praxis** we will clone the ```Ubuntu 18.04 LTS``` distribution
-and do the customization in our own project distribution (siteconnect).
-
-**Steps:**
-- [Create a work Folder](#Create-a-work-folder)
-- [Prepare the Ubuntu 18.04 LTS Distribution for cloning](PPrepare-the-Ubuntu-18.04-LTS-Distribution-for-cloning)
-- [Build a Distribution Template](#Build-a-Distribution-Template)
-    - [Export the Template](#Export-the-Template)
-    - [Deploy your Distribution](#Deploy-your-Distribution)
-    - [Customize your Distribution](#Customize-your-Distribution)
-- [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
-    - [Customize the Distribution](#Customize-the-Distribution)
-        - [Generate SSH Key](#Generate-SSH-Key)
-        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
-        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
-        - [Set up Node.JS](#Set-up-Node.JS)
-
+[BACK](#Deployment-Steps)
 # Create a work Folder
 
 Create the following folder on your C Drive:
@@ -62,9 +50,10 @@ C:\Distributions
 
 This will be our place to save our modifications.
 
-* [Back](#Preparing-WSL-Ubuntu 18.04.LTS)
+# Preparing WSL Ubuntu 18.04.LTS
 
-# Prepare the Ubuntu 18.04 LTS Distribution for cloning
+As a kind of **Best-Praxis** we will clone the ```Ubuntu 18.04 LTS``` distribution
+and do the customization in our own project distribution (siteconnect).
 
 Start Ubuntu 18.04 LTS and use the folloing username/password combination.
 Feel free to change the password on you own choise. Keep in mind you maybe
@@ -180,7 +169,7 @@ I recomment always the highest possibol protection but in the real world,
 especaly by automated processes, a SSH Key without password is more handy then with.
 
 ```bash
-- ssh-keygen -t rsa -b 4096 -C "siteconnect"
+$ ssh-keygen -t rsa -b 4096 -C "siteconnect"
 ```
 
 Aternatively, you can also use an already created SSH key
@@ -265,7 +254,7 @@ In addidion, I installed the Postgress extension:
 $ npm install pg
 ```
 
-We are now ready to go with the WSL Distribution!
+We are ready to go with the WSL Distribution now!
 
 # Docker Container
 
