@@ -18,9 +18,9 @@
 - [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
     - [Customize the Distribution](#Customize-the-Distribution)
         - [Generate SSH Key](#Generate-SSH-Key)
-        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
-        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
-        - [Set up Node.JS](#Set-up-Node.JS)
+        - [Create /etc/wsl.conf](#Create-etc-wsl.conf)
+        - [Create /etc/wsl.conf](#Create-etc-wsl.conf)
+        - [Set up Node.JS](#Set-up-Node-JS)
 - [Docker Container](#Docker-Container)
 # Prerequistes
 
@@ -322,6 +322,8 @@ Here some simple docker commandlines you should know:
 
 Let's go to the **postgres** deployment.
 
+[BACK](#Deployment-Steps)
+
 ## Run Postgres Container
 
 **Settings:**
@@ -408,3 +410,5 @@ client.query('SELECT NOW()', (err, res) => {
     client.end()
     })
 ```
+
+[BACK](#Deployment-Steps)
