@@ -9,11 +9,11 @@
 # Deployment Steps
 
 - [Prerequistes](#Prerequistes)
+- [Create a work Folder](#Create-a-work-folder)
 - [Docker Container](#Docker-Container)
     - [Some Explainations]()
     - [Build the Postgres container](#)
     - [Verify the Database with DBeaver](#)
-- [Create a Distribution work Folder](#Create-a-distribution-work-folder)
 - [Preparing WSL Ubuntu 18.04 LTS](#Preparing-WSL-Ubuntu-1804-LTS)
 - [Build a Distribution Template](#Build-a-Distribution-Template)
     - [Export the Template](#Export-the-Template)
@@ -45,7 +45,7 @@ All the following steps needs a [```PowerShell```](https://www.digitalcitizen.li
 Use the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
 
 [BACK](#Deployment-Steps)
-# Create a Distribution work Folder
+# Create a work Folder
 
 Create the following folder on your C Drive:
 ```bach
@@ -53,6 +53,30 @@ C:\Distributions
 ```
 
 This will be our place to save our modifications.
+
+[BACK](#Deployment-Steps)
+
+# Docker Container
+
+> MISSING CONTENT
+
+[BACK](#Deployment-Steps)
+
+## Some Explainations
+
+> MISSING CONTENT
+
+[BACK](#Deployment-Steps)
+
+## Build the Postgres container
+
+> MISSING CONTENT
+
+[BACK](#Deployment-Steps)
+
+## Verify the Database with DBeaver
+
+> MISSING CONTENT
 
 [BACK](#Deployment-Steps)
 
