@@ -62,7 +62,7 @@ C:\Distributions
 
 This will be our place to save our modifications.
 
-![Back](#Preparing-WSL-Ubuntu 18.04.LTS)
+* [Back](#Preparing-WSL-Ubuntu 18.04.LTS)
 
 # Prepare the Ubuntu 18.04 LTS Distribution for cloning
 
@@ -92,7 +92,7 @@ Feel free to add more if you think it makes sense to have them in your template.
 
 After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
 
-![Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
+* [Back](#Preparing-WSL-Ubuntu 18.04.LTS)
 
 # Build a Distribution Template
 
@@ -111,7 +111,7 @@ All commands needs to get applied in a **PowerShell** command shell.
 PS C:\> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
-![Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
+* [Back](#Preparing-WSL-Ubuntu 18.04.LTS)
 
 # Deoploy a Project Distribution
 
@@ -270,7 +270,7 @@ $ npm install pg
 
 We are now ready to go with the WSL Distribution!
 
-![Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
+* [Back](#Preparing-WSL-Ubuntu 18.04.LTS)
 
 # Docker Container
 
