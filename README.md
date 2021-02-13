@@ -1,7 +1,7 @@
 # SiteConnect Developer Envirnment
 
 Building a solid developer envirment for ```Siteconnect``` development 
-with NodeJS in a WSL Distribution and a ```Postgres```database running in a
+with NodeJS in a WSL Distribution and a ```Postgres``` database running in a
 Docker Container.
 
 ![Setup](https://lucid.app/publicSegments/view/74aff30f-a632-4245-b004-4338cb8d9fcc/image.png)
@@ -31,8 +31,9 @@ Further explaination integrates each of the applications into the devlopement en
 
 # Preparing WSL (Ubuntu 18.04.LTS)
 
-All the following steps needs a [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt. Making our live ease, we use
-the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
+All the following steps needs a [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
+
+Use the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
 
 # Distribution
 
