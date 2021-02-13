@@ -73,7 +73,7 @@ $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
 Next step is to install the following packages:
 ```bash
 $ sudo apt-get update
-$ sudo apt-get install -y install vim curl git tree wget 
+$ sudo apt-get install -y install vim curl git tree wget postgresql-client
 ```
 
 Feel free to add more if you think it makes sense to have them in your template.
@@ -211,9 +211,9 @@ c:\ps> wsl.exe --terminate siteconnect-ubuntu-18.04
 
 > IMPORTANT: 
 > 
-> If you change/add somthing in  **/etc/wsl.conf** the Distribution needs to get
+> If you change/add somthing in **/etc/wsl.conf** the Distribution needs to get
 > **teminated**. This command does a complete shutdown of the Distribution. If you reconnect 
-> to it, it is like a reboot. The settings in the configuration file getting adapted by this reboot.
+> to it, it is like a reboot. The settings in the configuration file gets applied by this reboot.
 
 Restart the ```siteconnect-ubuntu-18.04``` Distribution by simply type:
 ```pws
@@ -222,19 +222,26 @@ c:\ps> wsl.exe
 
 You might realize, the login user is now **siteconnect**.
 
+## Install NodeJS
 
-Install native Postgres client:
-sudo apt-get install -y postgresql-client
+Now we are ready to install NodeJS into the Distribution.
+I simply followed the description on:
 
-Install NODE (follow: https://docs.microsoft.com/en-us/windows/nodejs/setup-on-wsl2)
+- [Set up your Node.js development environment with WSL 2](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-wsl2)
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-nvm install node
-nvm install --lts
+Here the long story short:
+```bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+$ nvm install node
+$ nvm install --lts
+```
 
-npm install pg (=postgress)
+In addidion, I installed the Postgress extension:
+```bash
+$ npm install pg
+```
 
-DONE!!!!!!
+We are now ready to go with the WSL Distribution!
 
 # Docker Container
 
