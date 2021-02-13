@@ -13,7 +13,7 @@
 - [Docker Container](#Docker-Container)
     - [Some Explainations]()
     - [Build the Postgres container](#)
-    - [Verify the Database with DBeaver](#)
+    - [Verify with DBeaver](#)
 - [Preparing WSL Ubuntu 18.04 LTS](#Preparing-WSL-Ubuntu-1804-LTS)
 - [Build a Distribution Template](#Build-a-Distribution-Template)
     - [Export the Template](#Export-the-Template)
@@ -74,7 +74,7 @@ This will be our place to save our modifications.
 
 [BACK](#Deployment-Steps)
 
-## Verify the Database with DBeaver
+## Verify with DBeaver
 
 > MISSING CONTENT
 
