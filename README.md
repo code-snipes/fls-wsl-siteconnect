@@ -39,10 +39,10 @@ Follow the Installation Guides of each Application.
 - [DBeaver Community Version](https://dbeaver.io)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
-Further explaination integrates each of the applications into the devlopement environment.
+- [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
+    - Use the ```Windows Terminal``` which is on the prerequisite list.
 
-All the following steps needs a [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
-Use the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
+Further explaination integrates each of the applications into the Development Environment.
 
 [BACK](#Deployment-Steps)
 # Create a work Folder
