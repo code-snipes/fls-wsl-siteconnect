@@ -32,15 +32,15 @@ All the following applications needs to be installed before you begin.
 If you do a fresh installation, use all the defaults during the installation.
 Follow the Installation Guides of each Application.
 
-- [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-- [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/get-started)
-- [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
-- [Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
-- [DBeaver Community Version](https://dbeaver.io)
-- [Visual Studio Code](https://code.visualstudio.com/download)
+- [```Windows Subsystem for Linux```](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+- [```Windows Terminal```](https://docs.microsoft.com/en-us/windows/terminal/get-started)
+- [```Ubuntu 18.04 LTS```](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
+- [```Docker Desktop on Windows```](https://docs.docker.com/docker-for-windows/install/)
+- [```DBeaver Community Version```](https://dbeaver.io)
+- [```Visual Studio Code```](https://code.visualstudio.com/download)
 
 - [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
-    - Use the ```Windows Terminal``` which is on the prerequisite list.
+    - Use the [```Windows Terminal```](https://docs.microsoft.com/en-us/windows/terminal/get-started) which is on the prerequisite list.
 
 Further explaination integrates each of the applications into the Development Environment.
 
