@@ -26,6 +26,7 @@ Follow the Installation Guides of each Application.
 - [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
 - [Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
 - [DBeaver Community Version](https://dbeaver.io)
+- [Visual Studio Code](https://code.visualstudio.com/download)
 
 Further explaination integrates each of the applications into the devlopement environment.
 
@@ -35,24 +36,30 @@ All the following steps needs a [```PowerShell```](https://www.digitalcitizen.li
 
 Use the ```Windows Terminal``` which you installed before. [Check the Prerequisites.](#prerequsites)
 
-# Distribution
-
 As a kind of **Best-Praxis** we will clone the ```Ubuntu 18.04 LTS``` distribution
 and do the customization in our own project distribution (siteconnect).
 
 **Steps:**
-- [Create a work foler](#workfolder)
-- [Prepare the ```Ubuntu 18.04.LTS``` Distribution for cloning.](#prepare)
-- [Clone into our porject distribution.](#clone)
-- [Customize the ```siteconnect``` project distribution.](#customize)
+- [Create a work foler](#Create-a-Workfolder)
+- [Prepare the Ubuntu 18.04 LTS Distribution for cloning](PPrepare-the-Ubuntu-18.04-LTS-Distribution-for-cloning)
+- [Build a Distribution Template](#Build-a-Distribution-Template)
+    - [Export the Template](#Export-the-Template)
+    - [Deploy your Distribution](#Deploy-your-Distribution)
+    - [Customize your Distribution](#Customize-your-Distribution)
+- [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
+    - [Customize the Distribution](#Customize-the-Distribution)
+        - [Generate SSH Key](#Generate-SSH-Key)
+        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
+        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
+- [Install Node.JS](#Install-Node.JS)
 
-## Workfolder
+# Create a Workfolder
 
 Create the folloing folder on your C Drive:
 ```bach
 C:\Distributions
 ```
-## Prepare
+# Prepare the Ubuntu 18.04 LTS Distribution for cloning
 
 Start Ubuntu 18.04 LTS and use the folloing username/password combination.
 Feel free to change the password on you own choise. Keep in mind you maybe
@@ -80,16 +87,15 @@ Feel free to add more if you think it makes sense to have them in your template.
 
 After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
 
-## Clone
+# Build a Distribution Template
 
 Best praxis is always to build a dedicated Distribution for your project.
+The advantage is, you can specificaly customize the Distribution with
+the porject's requrements. SSH Keys, Packages, Connections, etc.
 
-Steps will be:
-- [Export the Template (Ubuntu 18.04 LTS) we prepared in the prevous step.](#export)
-- [Create a Clone of the Template (Project Distribution).](#create)
-- [Customize the cloned Distribution.](#cutomize)
+Find the necessary steps for the ```siteconnect``` porject below.
 
-### Export
+## Export the Template
 
 This step will create a template for the final **Project Distribution**.
 It simply exports the customized ```Ubuntu 18.04 LTS```.
@@ -98,7 +104,7 @@ All commands needs to get applied in a **PowerShell** command shell.
 PS C:\> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
-### Create
+# Deoploy a Project Distribution
 
 Now we can create our ```Project Distribution```
 
@@ -128,15 +134,15 @@ NAME                        STATE           VERSION
 
 The ```*``` maked Distibution is the default.
 
-## Customize
+## Customize the Distribution
 
-Now we start the new created ```siteconnect-ubuntu-18.04``` Distribution the first time.
+Now we will start the new created ```siteconnect-ubuntu-18.04``` Distribution the first time.
 ```pws
 PS C:\> wsl.exe --user ubuntu
 ```
 
-After a successfull start and login crate a new user **siteconnect** with the same
-special **sudo** settings as we did with the **ubuntu** user.
+After a successfull start and login we will go ahead by creating a new Linux user: **siteconnect** with the same
+special **sudo** settings as we did with the **ubuntu** user before.
 ```bash
 $ sudo groupadd -r siteconnect
 $ sudo useradd -m -r -g siteconnect -d /home/siteconnect -s /bin/bash -c "SiteConnect User Account" siteconnect
@@ -144,22 +150,29 @@ $ sudo usermod -aG sudo siteconnect
 $ sudo bash -c "echo 'siteconnect ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/siteconnect"
 ```
 
-If the commands are done go and ```exit``` the Distribution again.
-
-Now we will login with the new created user **siteconnect** and finalize the customization.
+If the commands ran successfully you need to  ```exit``` the Distribution and restart/login with the **siteconnect** user.
 
 ```pws
 PS C:\> wsl.exe --user siteconnect
 ```
 
-> IMPORTANT:
->  
+> !!! IMPOIMPORTEN !!!
 > Be sure, you are in the linux-home-directory of the user **siteconnect**.
-> YOu can test this by typing ```pwd```. You should get an output: ```/home/siteconnect```.
-> If you are in another folder, use ```cd``` to jump to the linux-home-directory.
+> Test it by typing ```pwd```. You should get an output: ```/home/siteconnect```.
+> If the output shows another folder, use ```cd``` to jump into user's **siteconnect**** Linux-home-directory.
 > Be sure you are in the right folder, before you go ahed.
 
-Generate SSH Key for user **siteconnect**
+## Generate SSH Key
+
+We always need a SSH key to authentificate on various services.
+GitHub, Azuer DevOps, login to anouther host on SSH, etc.
+Therefore, we will create a new SSH key for the user **siteconnect** and
+store it in ```~/.ssh/config``` folder.
+
+During the creation, you will get asked about setting a Password for the SSH Key.
+I recomment always the highest possibol protection but in the real world,
+especaly by automated processes, a SSH Key without password is more handy then with.
+
 ```bash
 - ssh-keygen -t rsa -b 4096 -C "siteconnect"
 ```
@@ -168,7 +181,12 @@ Aternatively, you can also use an already created SSH key
 if you have one you normaly use. Feel free and copy this key for the
 user **siteconnect**
 
-Create a ./ssh/config file
+## Create a ./ssh/config
+
+It is also helpfull, if you can use the **ssh-agent** to foreard the private key,
+if you do a "chain-login" to another host on SSH. Let's create a config file
+and add your SSH key.
+
 ```bash
 $ bash -c 'cat << EOF > ~/.ssh/config
 Host *
@@ -186,13 +204,14 @@ Here an example of how to enable it:
 eval "$(ssh-agent -s)"
 ```
 
-As a last step, we need to create a **wsl.conf** file.
-Here we can set default of the Distribution.
+## Create /etc/wsl.conf
+
+Finalizing the Distribution, we should to create a **wsl.conf** file.
+Here we can set defaults of the Distribution.
 
 Find detailed information about the posibilties here:
 - [WSL commands and launch configurations](https://docs.microsoft.com/en-us/windows/wsl/wsl-config)
 
-Create /etc/wsl.conf with defaults:
 ```bash
 $ sudo bash -c 'cat << EOF > /etc/wsl.conf
 [network]
@@ -208,11 +227,10 @@ After applying, **exit** the Distribution and **terminate** it with the followin
 PS C:\> wsl.exe --terminate siteconnect-ubuntu-18.04
 ```
 
-> IMPORTANT: 
-> 
-> If you change/add somthing in **/etc/wsl.conf** the Distribution needs to get
-> **teminated**. This command does a complete shutdown of the Distribution. If you reconnect 
-> to it, it is like a reboot. The settings in the configuration file gets applied by this reboot.
+> !!! IMPORTANT !!!
+> If you change/add settings to the config file **/etc/wsl.conf**, the Distribution needs to get
+> **teminated** after exit. Termiination does a complete shutdown of the WSL Distribution. If you reconnect 
+> to it, it is like after a reboot. The settings in the configuration file gets applied by this reboot.
 
 Restart the ```siteconnect-ubuntu-18.04``` Distribution by simply type:
 ```pws
@@ -220,8 +238,9 @@ PS C:\> wsl.exe
 ```
 
 You might realize, the login user is now **siteconnect**.
+We achived this by setting the default username to **siteconnect**.
 
-## Install NodeJS
+# Install Node.JS
 
 Now we are ready to install NodeJS into the Distribution.
 I simply followed the description on:
@@ -346,12 +365,17 @@ This shold output: ```postgresql://siteconnect:siteconnect@<YourGatewayIP>:5432/
 
 # Verify
 
+You can check your success by testing the database connection.
+
+With the Postgress client:
+
 Test (Postgres client):
 psql -h `ip route show | awk '{print $3}' | head -n 1` -p 5432 -U siteconnect
 --> \l
 --> \q
 
-Test NODE code (with Ev. Variable):
+With a smiple connection script (Node.JS) including the ```DATABASE_URL``` Variable:
+
 
 ```node
 const { Pool, Client } = require('pg')
