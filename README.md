@@ -10,7 +10,7 @@
 
 - [Prerequistes](#Prerequistes)
 - [Create a work Folder](#Create-a-work-folder)
-- [Preparing WSL Ubuntu 18.04.LTS](#Preparing-WSL-Ubuntu-18.04.LTS)
+- [Preparing WSL Ubuntu 18.04 LTS](#Preparing-WSL-Ubuntu-1804-LTS)
 - [Build a Distribution Template](#Build-a-Distribution-Template)
     - [Export the Template](#Export-the-Template)
     - [Deploy your Distribution](#Deploy-your-Distribution)
@@ -18,9 +18,9 @@
 - [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
     - [Customize the Distribution](#Customize-the-Distribution)
         - [Generate SSH Key](#Generate-SSH-Key)
-        - [Create ./ssh/config](#Create-ssh-config)
-        - [Create /etc/wsl.conf](#Create-etc-wsl-conf)
-        - [Set up Node.JS](#Set-up-Node-JS)
+        - [Create ./ssh/config](#Create-sshconfig)
+        - [Create /etc/wsl.conf](#Create-etcwslconf)
+        - [Set up Node.JS](#Set-up-NodeJS)
 - [Docker Container](#Docker-Container)
 # Prerequistes
 
