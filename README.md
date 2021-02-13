@@ -18,9 +18,9 @@
 - [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
     - [Customize the Distribution](#Customize-the-Distribution)
         - [Generate SSH Key](#Generate-SSH-Key)
-        - [Create /etc/wsl.conf](#Create-etc-wsl.conf)
-        - [Create /etc/wsl.conf](#Create-etc-wsl.conf)
-        - [Set up Node.JS](#Set-up-Node-JS)
+        - [Create ./ssh/config](#Create-./ssh/config)
+        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
+        - [Set up Node.JS](#Set-up-Node.JS)
 - [Docker Container](#Docker-Container)
 # Prerequistes
 
@@ -189,7 +189,7 @@ user **siteconnect**
 
 [BACK](#Deployment-Steps)
 
-## Create a ./ssh/config
+## Create ./ssh/config
 
 It is also helpfull, if you can use the **ssh-agent** to foreard the private key,
 if you do a "chain-login" to another host on SSH. Let's create a config file
