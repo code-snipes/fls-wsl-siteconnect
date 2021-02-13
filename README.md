@@ -40,7 +40,7 @@ As a kind of **Best-Praxis** we will clone the ```Ubuntu 18.04 LTS``` distributi
 and do the customization in our own project distribution (siteconnect).
 
 **Steps:**
-- [Create a work foler](#Create-a-Workfolder)
+- [Create a work Folder](#Create-a-work-folder)
 - [Prepare the Ubuntu 18.04 LTS Distribution for cloning](PPrepare-the-Ubuntu-18.04-LTS-Distribution-for-cloning)
 - [Build a Distribution Template](#Build-a-Distribution-Template)
     - [Export the Template](#Export-the-Template)
@@ -53,12 +53,15 @@ and do the customization in our own project distribution (siteconnect).
         - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
 - [Install Node.JS](#Install-Node.JS)
 
-# Create a Workfolder
+# Create a work Folder
 
-Create the folloing folder on your C Drive:
+Create the following folder on your C Drive:
 ```bach
 C:\Distributions
 ```
+
+This will be our place to save our modifications.
+
 # Prepare the Ubuntu 18.04 LTS Distribution for cloning
 
 Start Ubuntu 18.04 LTS and use the folloing username/password combination.
