@@ -30,7 +30,7 @@ Follow the Installation Guides of each Application.
 
 Further explaination integrates each of the applications into the devlopement environment.
 
-# Preparing WSL (Ubuntu 18.04.LTS)
+# Preparing WSL Ubuntu 18.04.LTS
 
 All the following steps needs a [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
 
@@ -62,7 +62,7 @@ C:\Distributions
 
 This will be our place to save our modifications.
 
-![Back](#Preparing-WSL-(Ubuntu 18.04.LTS))
+![Back](#Preparing-WSL-Ubuntu 18.04.LTS)
 
 # Prepare the Ubuntu 18.04 LTS Distribution for cloning
 
