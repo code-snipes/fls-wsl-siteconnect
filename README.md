@@ -95,7 +95,7 @@ This step will create a template for the final **Project Distribution**.
 It simply exports the customized ```Ubuntu 18.04 LTS```.
 All commands needs to get applied in a **PowerShell** command shell.
 ```pws
-c:\ps> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
+PS C:\> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
 ### Create
@@ -104,17 +104,17 @@ Now we can create our ```Project Distribution```
 
 It creates a clone of the exported Template of the last [step](#export)
 ```pws
-c:\ps> wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
+PS C:\> wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
 Making our life easy, let's set the ```Project Distibution``` as default.
 ```pws
-c:\ps> wsl.exe --set-default siteconnect-ubuntu-18.04
+PS C:\> wsl.exe --set-default siteconnect-ubuntu-18.04
 ```
 
 You can check the success by typing:
 ```pws
-c:\ps> wsl.exe --list --verbose
+PS C:\> wsl.exe --list --verbose
 ```
 
 The Output of this command should show you something like:
@@ -132,7 +132,7 @@ The ```*``` maked Distibution is the default.
 
 Now we start the new created ```siteconnect-ubuntu-18.04``` Distribution the first time.
 ```pws
-c:\ps> wsl.exe --user ubuntu
+PS C:\> wsl.exe --user ubuntu
 ```
 
 After a successfull start and login crate a new user **siteconnect** with the same
@@ -149,7 +149,7 @@ If the commands are done go and ```exit``` the Distribution again.
 Now we will login with the new created user **siteconnect** and finalize the customization.
 
 ```pws
-c:\ps> wsl.exe --user siteconnect
+PS C:\> wsl.exe --user siteconnect
 ```
 
 > IMPORTANT:
@@ -206,7 +206,7 @@ EOF'
 
 After applying, **exit** the Distribution and **terminate** it with the following command:
 ```pws
-c:\ps> wsl.exe --terminate siteconnect-ubuntu-18.04
+PS C:\> wsl.exe --terminate siteconnect-ubuntu-18.04
 ```
 
 > IMPORTANT: 
@@ -217,7 +217,7 @@ c:\ps> wsl.exe --terminate siteconnect-ubuntu-18.04
 
 Restart the ```siteconnect-ubuntu-18.04``` Distribution by simply type:
 ```pws
-c:\ps> wsl.exe
+PS C:\> wsl.exe
 ```
 
 You might realize, the login user is now **siteconnect**.
@@ -257,7 +257,7 @@ Docker is a technologie that allows you to run microservices as a postgres Datab
 in a minimum invirment. No Operationg system to deploy, as we know it from VMware or HyperV.
 The Database runs in a container Framework without any kind of Hypervisor in the background.
 
-> Important:
+> IMPORTENT:
 > - Docker Container needs to deployed.
 > - They can run in the background.
 > - You can stop/start container after deployment.
@@ -282,25 +282,67 @@ Here some simple docker commandlines you should know:
 - stops a deployed container
 
 ```docker container start [CONTAINER-ID]```
-- starts a deployed conterin
+- starts a deployed container
 
 ```docker container exec -it [CONTAINER-ID] bash```
 - starts a command shell to a container (bash) - simular to a SSH connection to a server.
 
+```docker volume ls```
+- lists created (persistent) volumes
+
 Let's go to the **postgres** deployment.
 
-Install and run Postgres Container:
+## Run Postgres Container
+
+**Settings:**
+- Name: siteconnect
+- Port: 5432 (listen)
+- POSTGRES_USER: siteconnect
+- POSTGRES_PASSWORD: siteconnect
+- Data Volume (Persitent data): siteconnect_data
+- Version: postgres:10
+
+**Command:**
 ```pws
-c:\ps> docker container run -d --name siteconnect -p 5432:5432 -e POSTGRES_PASSWORD=siteconnect -e POSTGRES_USER=siteconnect -v siteconnect_data:/var/lib/postgresql/data postgres:10
+PS C:\> docker container run -d --name siteconnect -p 5432:5432 -e POSTGRES_USER=siteconnect -e POSTGRES_PASSWORD=siteconnect -v siteconnect_data:/var/lib/postgresql/data postgres:10
 ```
 
-## Database Connect
+**Verify:**
+```pws
+PS C:\> docker container ls
+```
 
-Login to the "siteconnect" Distibution and set (export) DATABASE_URL to .bashrc (siteconnect user only):
-- sudo bash -c 'cat << EOF >> ~/.bashrc
+```bash
+CONTAINER ID   IMAGE         COMMAND                  CREATED       STATUS       PORTS                    NAMES
+b8f0874826c6   postgres:10   "docker-entrypoint.s…"   5 hours ago   Up 5 hours   0.0.0.0:5432->5432/tcp   siteconnect
+```
+
+The Container runs successfully, If your output of ```docker container ls``` is simual to the one above.
+
+# Database Connect
+
+Before we check the setup with Visual Studio Code, we need to set the Database connection.
+
+Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) DATABASE_URL to **.bashrc** (siteconnect user only):
+```bash
+$ bash -c 'cat << EOF >> ~/.bashrc
 GATEWAY_IP=`ip route show | awk '{print $3}' | head -n 1`
 export DATABASE_URL=postgresql://siteconnect:siteconnect@$GATEWAY_IP:5432/siteconnect
 EOF'
+```
+
+> EXPLAINATION:
+> Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely.
+> This means, we need to point it to the Gateway IP of the WSL envirment. 
+
+Verfy the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
+
+Check it with:
+```bash
+$ echo $DATABASE_URL
+```
+
+This shold output: ```postgresql://siteconnect:siteconnect@<YourGatewayIP>:5432/siteconnect```
 
 # Verify
 
