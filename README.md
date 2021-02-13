@@ -64,37 +64,78 @@ Username: ubuntu
 Password: ubuntu
 ````
 
-After the initial start of Ubuntu and finalizing the configuration you can  
-go ahead and set the user ```ubuntu``` in a special **sudo** status.
+After the initial start of Ubuntu and finalizing the configuration you can go ahead 
+and set the user ```ubuntu``` in a special **sudo** status.
 This avoids the password question, if you execute commands that nedds **root** permissions.
 
 ```bash
 $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
 ```
 
-Next step is to install following packages:
+Next step is to install the following packages:
 
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install -y install vim curl git tree wget 
 ```
 
-Feel free to add more if you think is makes sense to have them in your template.
+Feel free to add more if you think it makes sense to have them in your template.
 
 After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
 
 ## Clone
 
-Export a copy of the Distribution
-- wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
-  | this will generate a template, based of the previous changes
-  | we did in the above steps.
+Best praxis is always to build a dedicated Distribution for your project.
 
-Create a clone of the Template
-- wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
+Steps will be:
+- [Export the Template (Ubuntu 18.04 LTS) we prepared in the prevous step.](#export)
+- [Create a Clone of the Template (Project Distribution).](#create)
+- [Customize the cloned Distribution.](#cutomize)
 
-Set "siteconnect-ubuntu-18.04" as default
-- wsl.exe --set-default siteconnect-ubuntu-18.04
+### Export
+
+This step will create a template for the final **Project Distribution**.
+It simply exports the customized ```Ubuntu 18.04 LTS```.
+
+All commands needs to get applied in a **PowerShell** command shell.
+
+```pws
+c:\ps> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
+```
+
+### Create
+
+Now we can create our ```Project Distribution```
+
+It creates a clone of the exported Template of the last [step](#export)
+
+```pws
+c:\ps> wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
+```
+
+Doing forther actions and to make our life ease, let's set the ```Project Distibution``` as default.
+
+```pws
+c:\ps> wsl.exe --set-default siteconnect-ubuntu-18.04
+```
+
+You can check the success by typing:
+
+```pws
+c:\ps> wsl.exe --list --verbose
+```
+
+The Output of this command should show you something like:
+
+```bash
+NAME                        STATE           VERSION
+* siteconnect-ubuntu-18.04    Running         2
+  docker-desktop-data         Running         2
+  Ubuntu-18.04                Stopped         2
+  docker-desktop              Running         2
+```
+
+The ```*``` maked Distibution is the default.
 
 ## Customize
 
