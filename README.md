@@ -170,7 +170,7 @@ user **siteconnect**
 
 Create a ./ssh/config file
 ```bash
-$ sudo bash -c 'cat << EOF > ~/.ssh/config
+$ bash -c 'cat << EOF > ~/.ssh/config
 Host *
  ForwardAgent  yes
  UseKeychain yes
@@ -245,8 +245,54 @@ We are now ready to go with the WSL Distribution!
 
 # Docker Container
 
+The next part descips how we run the **postgres** databse in a Docker container.
+
+Docker Desktop for Windows needs to be successfully intalled. [Check the Prerequisites.](#prerequsites)
+
+Short explaination:
+
+Docker is a new modern IT term. There are a lot of information in the Internet about
+the posibliries you have by building or using Docker container. In simple words, 
+Docker is a technologie that allows you to run microservices as a postgres Database Server
+in a minimum invirment. No Operationg system to deploy, as we know it from VMware or HyperV.
+The Database runs in a container Framework without any kind of Hypervisor in the background.
+
+> Important:
+> - Docker Container needs to deployed.
+> - They can run in the background.
+> - You can stop/start container after deployment.
+> - Find 10.000 preconfigured contains at [DockerHUB](http://www.dockerhub.com)
+> 
+> You should login to [DockerHUB](http://www.dockerhub.com) and create a personal user.
+> This is free of chage but opens the [DockerHUB](http://www.dockerhub.com) Repositry with
+> all the preconfigured Containers, including Documentation, etc. I highly recommend it.
+
+Here some simple docker commandlines you should know:
+
+```docker image ls```
+- list all downloaded images (containers)
+
+```docker container ls -a```
+- shows all running/not-running containers
+
+```docker container rm [CONTAINER-ID]```
+- delete a container
+
+```docker container stop [CONTAINER-ID]```
+- stops a deployed container
+
+```docker container start [CONTAINER-ID]```
+- starts a deployed conterin
+
+```docker container exec -it [CONTAINER-ID] bash```
+- starts a command shell to a container (bash) - simular to a SSH connection to a server.
+
+Let's go to the **postgres** deployment.
+
 Install and run Postgres Container:
-- docker container run -d --name siteconnect -p 5432:5432 -e POSTGRES_PASSWORD=siteconnect -e POSTGRES_USER=siteconnect -v siteconnect_data:/var/lib/postgresql/data postgres:10
+```pws
+c:\ps> docker container run -d --name siteconnect -p 5432:5432 -e POSTGRES_PASSWORD=siteconnect -e POSTGRES_USER=siteconnect -v siteconnect_data:/var/lib/postgresql/data postgres:10
+```
 
 ## Database Connect
 
