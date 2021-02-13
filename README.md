@@ -322,7 +322,7 @@ The Container runs successfully, If your output of ```docker container ls``` is 
 
 Before we check the setup with Visual Studio Code, we need to set the Database connection.
 
-Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) DATABASE_URL to **.bashrc** (siteconnect user only):
+Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) **DATABASE_URL** in **.bashrc** (siteconnect user only):
 ```bash
 $ bash -c 'cat << EOF >> ~/.bashrc
 GATEWAY_IP=`ip route show | awk '{print $3}' | head -n 1`
@@ -332,7 +332,8 @@ EOF'
 
 > EXPLAINATION:
 > Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely.
-> This means, we need to point it to the Gateway IP of the WSL envirment. 
+> This means, we need to point it to the Gateway IP of the WSL envirment. Adding **DATABASE_URL**
+> to the **.bashrc** keeps it persistent.
 
 Verfy the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
 
