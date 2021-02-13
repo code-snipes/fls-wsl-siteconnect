@@ -18,9 +18,9 @@
 - [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
     - [Customize the Distribution](#Customize-the-Distribution)
         - [Generate SSH Key](#Generate-SSH-Key)
-        - [Create ./ssh/config](#Create-./ssh/config)
-        - [Create /etc/wsl.conf](#Create-/etc/wsl.conf)
-        - [Set up Node.JS](#Set-up-Node.JS)
+        - [Create ./ssh/config](#Create-ssh-config)
+        - [Create /etc/wsl.conf](#Create-etc-wsl-conf)
+        - [Set up Node.JS](#Set-up-Node-JS)
 - [Docker Container](#Docker-Container)
 # Prerequistes
 
