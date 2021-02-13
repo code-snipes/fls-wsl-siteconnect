@@ -1,8 +1,16 @@
-# SiteConnect Developer Envirnment
+# Node.JS Developer Envirnment
 
+> * Docker
+> * Windows Subsystem for Linux
+>
+> **Project:** ```SiteConnect```
+> **Elements:** Postgres DB, Node.JS, Visual Studio Code, DBeaver
+>
 > Building a solid developer envirment for ```Siteconnect``` development 
 > with NodeJS in a WSL Distribution and a ```Postgres``` database running in a
 > Docker Container.
+
+# Setup Design
 
 ![Setup](https://lucid.app/publicSegments/view/74aff30f-a632-4245-b004-4338cb8d9fcc/image.png)
 
