@@ -209,12 +209,15 @@ Find the necessary steps for the ```siteconnect``` project below.
 ## Export the Template
 
 This step will create a template for the final **Project Distribution**.
-It exports merely the customized ```Ubuntu 18.04 LTS```.
 All commands need to get applied in a **PowerShell** command shell.
 
 ```pws
 PS C:\> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
+
+> EXPLAINATION: The command exports the ```Ubuntu 18.04 LTS``` Distribution into a 
+> TAR file and saves it in ```C:\Distributions\ubuntu-18.04-template.tar```.
+> We will use this exported Distribution in below steps.
 
 [BACK](#Deployment-Steps)
 
