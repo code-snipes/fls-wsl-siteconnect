@@ -135,9 +135,13 @@ PS C:\> docker container run `
  postgres:10
 ```
 
-The parameter: ```--restart unless-stopped``` forces the Container to continue if it crashes.
-But it will the Container not restart if you, for example, reboot your PC. If you like
-the Container always running, even after a reboot, set the parameter to: ```--restart always``` 
+> COMMENT: The parameter: ```--restart unless-stopped``` forces the Container to continue if it crashes.
+> But it will the Container not restart if you, for example, reboot your PC. If you like
+> the Container always running, even after a reboot, set the parameter to: ```--restart always``` 
+
+> COMMENT: The start of the container will also create a **siteconnect** database and user.
+> The two parameters ```--env POSTGRES_USER=siteconnect``` and ```--env POSTGRES_PASSWORD=siteconnect``` taking 
+> care of the creation. You don't need to create this manually (DBeaver).
 
 **Verify:**
 ```pws
