@@ -187,7 +187,7 @@ $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
 The next step is to install the following packages:
 ```bash
 $ sudo apt-get update
-$ sudo apt-get install -y install vim curl git tree wget postgresql-client
+$ sudo apt-get install -y vim curl git tree wget postgresql-client
 ```
 
 Feel free to add more packages of your choice if you think it makes sense to have them in your template.
