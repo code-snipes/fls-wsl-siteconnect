@@ -1,12 +1,11 @@
-# Node.JS Developer Envirnment
+# Node.JS Developer Environment
 
-> Building a solid developer envirment for ```Siteconnect``` development 
-> with NodeJS in a WSL Distribution and a ```Postgres``` database running in a
-> Docker Container.
+> Building a solid developer environment with NodeJS in a WSL Distribution 
+> and a Connection to a Database Server, running in a Container.
 >
 > - **Project:** ```SiteConnect```
 > - **Elements:** Postgres DB, Node.JS, Visual Studio Code, DBeaver
-> - **Engine:** Docker, Windows Subsystem for Linux
+> - **Engine:** Docker, Windows Subsystem for Linux (WSL)
 
 # Setup Design
 
@@ -17,9 +16,9 @@
 - [Prerequistes](#Prerequistes)
 - [Create a work Folder](#Create-a-work-folder)
 - [Docker Container](#Docker-Container)
-    - [Some Explainations]()
-    - [Build the Postgres container](#)
-    - [Verify with DBeaver](#)
+    - [Some Explainations](#Some-Explainations)
+    - [Run the Postgres container](#Run-the-Postgres-container)
+    - [Verify with DBeaver](#Verify-with-DBeaver)
 - [Preparing WSL Ubuntu 18.04 LTS](#Preparing-WSL-Ubuntu-1804-LTS)
 - [Build a Distribution Template](#Build-a-Distribution-Template)
     - [Export the Template](#Export-the-Template)
@@ -27,14 +26,15 @@
     - [Customize your Distribution](#Customize-your-Distribution)
 - [Deoploy a Project Distribution](#Deoploy-a-Project-Distribution)
     - [Customize the Distribution](#Customize-the-Distribution)
-        - [Generate SSH Key](#Generate-SSH-Key)
-        - [Create ./ssh/config](#Create-sshconfig)
-        - [Create /etc/wsl.conf](#Create-etcwslconf)
-        - [Set up Node.JS](#Set-up-NodeJS)
-        - [Postrgres Database Connect](#Postgres-Database-Connect)
+    - [Generate SSH Key](#Generate-SSH-Key)
+    - [Create ./ssh/config](#Create-sshconfig)
+    - [Create /etc/wsl.conf](#Create-etcwslconf)
+    - [Set up Node.JS](#Set-up-NodeJS)
+    - [Postrgres Database Connect](#Postgres-Database-Connect)
+
 # Prerequistes
 
-All the following applications needs to be installed before you begin.
+All the following applications need installation on your Developer PC before you begin.
 If you do a fresh installation, use all the defaults during the installation.
 Follow the Installation Guides of each Application.
 
@@ -46,11 +46,12 @@ Follow the Installation Guides of each Application.
 - [```Visual Studio Code```](https://code.visualstudio.com/download)
 
 - [```PowerShell```](https://www.digitalcitizen.life/ways-launch-powershell-windows-admin/) command promt.
-    - Use the [```Windows Terminal```](https://docs.microsoft.com/en-us/windows/terminal/get-started) which is on the prerequisite list.
+    - Use the [```Windows Terminal```](https://docs.microsoft.com/en-us/windows/terminal/get-started), which is on the prerequisite list.
 
-Further explaination integrates each of the applications into the Development Environment.
+Further explanation integrates each of the applications into the Development Environment.
 
 [BACK](#Deployment-Steps)
+
 # Create a work Folder
 
 Create the following folder on your C Drive:
@@ -58,82 +59,154 @@ Create the following folder on your C Drive:
 C:\Distributions
 ```
 
-This will be our place to save our modifications.
+It will be our place to save our modifications.
 
 [BACK](#Deployment-Steps)
 
 # Docker Container
 
-> MISSING CONTENT
+There is a lot of information about Docker on the Internet. How you use, build, 
+and run Docker containers. Docker Container is a technology that allows you to run microservices, as an example, a Postgres Database Server in a minimum, light, and customized environment. No Operating system to deploy, as we know it from VMware or HyperV.
+The Database runs in a container Framework without any Hypervisor in the background.
+
+> IMPORTENT:
+> - Containers getting deployed.
+> - They can run in the background.
+> - You can stop/start container after deployment.
+> - Find 10.000 preconfigured contains at [DockerHUB](http://www.dockerhub.com)
+> 
+> I highly recommend registering an account at [DockerHUB](http://www.dockerhub.com).
+> This is free of charge and opens you the [DockerHUB](http://www.dockerhub.com) Repository with
+> all the preconfigured Containers, including Documentation, etc.
+
+## Some Explanations
+
+If you are not familiar with **Docker**, here some commands, you should know.
+Find a detailed description at https://docs.docker.com
+
+```docker image ls```
+- list all downloaded images (containers)
+
+```docker container ls -a```
+- shows all running/not-running containers
+
+```docker container rm [CONTAINER-ID]```
+- delete a container
+
+```docker container stop [CONTAINER-ID]```
+- stops a deployed container
+
+```docker container start [CONTAINER-ID]```
+- starts a deployed container
+
+```docker container exec -it [CONTAINER-ID] bash```
+- starts a command shell to a container (bash) - similar to an SSH connection to a server.
+
+```docker volume ls```
+- lists created (persistent) volumes
+
+Let's go to the **Postgres** deployment.
 
 [BACK](#Deployment-Steps)
 
-## Some Explainations
+## Run the Postgres container
 
-> MISSING CONTENT
+Find a detailed description of the ```Postgres Docker Container``` on https://hub.docker.com/_/postgres
 
-[BACK](#Deployment-Steps)
+**Settings:**
+- Name: siteconnect
+- Port: 5432 (listen)
+- POSTGRES_USER: siteconnect
+- POSTGRES_PASSWORD: siteconnect
+- Data Volume (Persitent data): siteconnect_data
+- Version: postgres:10
 
-## Build the Postgres container
+**Command:**
+```pws
+PS C:\> docker container run `
+ --detach `
+ --restart unless-stopped `
+ --name siteconnect `
+ --publish 5432:5432 `
+ --env POSTGRES_USER=siteconnect `
+ --env POSTGRES_PASSWORD=siteconnect `
+ --volume siteconnect_data:/var/lib/postgresql/data `
+ postgres:10
+```
 
-> MISSING CONTENT
+The parameter: ```--restart unless-stopped``` forces the Container to continue if it crashes.
+But it will the Container not restart if you, for example, reboot your PC. If you like
+the Container always running, even after a reboot, set the parameter to: ```--restart always``` 
+
+**Verify:**
+```pws
+PS C:\> docker container ls
+```
+
+```bash
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+b8f0874826c6 postgres:10 "docker-entrypoint.s…" 5 hours ago Up 5 hours 0.0.0.0:5432->5432/tcp siteconnect
+```
+
+The Container runs successfully If your Output of ```docker container ls``` is similar to the one above.
 
 [BACK](#Deployment-Steps)
 
 ## Verify with DBeaver
 
-> MISSING CONTENT
+> CONTENT MISSING - STILL IN WORK !!!!
 
 [BACK](#Deployment-Steps)
 
 # Preparing WSL Ubuntu 18.04 LTS
 
 As a kind of **Best-Praxis** we will clone the ```Ubuntu 18.04 LTS``` distribution
-and do the customization in our own project distribution (siteconnect).
+and do the customization in our project distribution (siteconnect).
 
-Start Ubuntu 18.04 LTS and use the folloing username/password combination.
-Feel free to change the password on you own choise. Keep in mind you maybe
-need this password at a later point. Write it down or save it in secured place.
+Start Ubuntu 18.04 LTS and use the following username/password combination.
+Feel free to change the password on your own choice. Keep in mind you maybe
+need this password at a later point. Please write it down or save it in a secured place.
 
 ```
 Username: ubuntu
 Password: ubuntu
 ````
 
-After the initial start of Ubuntu and finalizing the configuration you can go ahead 
+After the initial start of Ubuntu and finalizing the configuration, you can go-ahead 
 and set the user ```ubuntu``` in a special **sudo** status.
 This avoids the password question, if you execute commands that nedds **root** permissions.
 ```bash
 $ sudo bash -c "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/ubuntu"
 ```
 
-Next step is to install the following packages:
+The next step is to install the following packages:
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install -y install vim curl git tree wget postgresql-client
 ```
 
-Feel free to add more packages of you choise if you think it makes sense to have them in your template.
+Feel free to add more packages of your choice if you think it makes sense to have them in your template.
 
-After the installation is completed, **exit** the distribution by typing ```exit``` at the command promt.
+After the installation, **exit** the Distribution by typing ```exit``` at the command prompt.
 
 [BACK](#Deployment-Steps)
 
 # Build a Distribution Template
 
-Best praxis is always to build a dedicated Distribution for your project.
-The advantage is, you can specificaly customize the Distribution with
-the porject's requrements. SSH Keys, Packages, Connections, etc.
+The best praxis is always to build a dedicated Distribution for your project.
+The advantage is, you can specifically customize the Distribution with
+the project's requirements. SSH Keys, Packages, Connections, etc.
 
-Find the necessary steps for the ```siteconnect``` porject below.
+Find the necessary steps for the ```siteconnect``` project below.
 
 [BACK](#Deployment-Steps)
 
 ## Export the Template
 
 This step will create a template for the final **Project Distribution**.
-It simply exports the customized ```Ubuntu 18.04 LTS```.
-All commands needs to get applied in a **PowerShell** command shell.
+It exports merely the customized ```Ubuntu 18.04 LTS```.
+All commands need to get applied in a **PowerShell** command shell.
+
 ```pws
 PS C:\> wsl.exe --export Ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
@@ -149,7 +222,7 @@ It creates a clone of the exported Template of the last [step](#export)
 PS C:\> wsl.exe --import siteconnect-ubuntu-18.04 C:\Distributions\siteconnect-ubuntu-18.04 C:\Distributions\ubuntu-18.04-template.tar
 ```
 
-Making our life easy, let's set the ```Project Distibution``` as default.
+Making our life easy, let's set the ```Project Distribution``` as default.
 ```pws
 PS C:\> wsl.exe --set-default siteconnect-ubuntu-18.04
 ```
@@ -161,26 +234,27 @@ PS C:\> wsl.exe --list --verbose
 
 The Output of this command should show you something like:
 ```bash
-NAME                        STATE           VERSION
-* siteconnect-ubuntu-18.04    Running         2
-  docker-desktop-data         Running         2
-  Ubuntu-18.04                Stopped         2
-  docker-desktop              Running         2
+NAME STATE VERSION
+* siteconnect-ubuntu-18.04 Running 2
+ docker-desktop-data Running 2
+ Ubuntu-18.04 Stopped 2
+ docker-desktop Running 2
 ```
 
-The ```*``` maked Distibution is the default.
+The ```*``` made Distribution is the default.
 
 [BACK](#Deployment-Steps)
 
 ## Customize the Distribution
 
-Now we will start the new created ```siteconnect-ubuntu-18.04``` Distribution the first time.
+Now we will start the newly created ```siteconnect-ubuntu-18.04```Distribution the first time.
 ```pws
 PS C:\> wsl.exe --user ubuntu
 ```
 
 After a successfull start and login we will go ahead by creating a new Linux user: **siteconnect** with the same
 special **sudo** settings as we did with the **ubuntu** user before.
+
 ```bash
 $ sudo groupadd -r siteconnect
 $ sudo useradd -m -r -g siteconnect -d /home/siteconnect -s /bin/bash -c "SiteConnect User Account" siteconnect
@@ -188,7 +262,7 @@ $ sudo usermod -aG sudo siteconnect
 $ sudo bash -c "echo 'siteconnect ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/siteconnect"
 ```
 
-If the commands ran successfully you need to  ```exit``` the Distribution and restart/login with the **siteconnect** user.
+If the commands ran successfully, you need to ```exit``` the Distribution and restart/login with the **siteconnect** user.
 
 ```pws
 PS C:\> wsl.exe --user siteconnect
@@ -196,50 +270,50 @@ PS C:\> wsl.exe --user siteconnect
 
 > !!! IMPOIMPORTEN !!!
 > Be sure, you are in the linux-home-directory of the user **siteconnect**.
-> Test it by typing ```pwd```. You should get an output: ```/home/siteconnect```.
-> If the output shows another folder, use ```cd``` to jump into user's **siteconnect**** Linux-home-directory.
-> Be sure you are in the right folder, before you go ahed.
+> Test it by typing ```pwd```. Your Output should look like: ```/home/siteconnect```.
+> If the Output shows another folder, use ```cd``` to jump into user's **siteconnect**** Linux-home-directory.
+> Be sure you are in the correct folder before you go ahead.
 
 [BACK](#Deployment-Steps)
 
 ## Generate SSH Key
 
-We always need a SSH key to authentificate on various services.
-GitHub, Azuer DevOps, login to anouther host on SSH, etc.
+We always need an SSH key to authenticate on various services.
+GitHub, Azure DevOps, login to another host on SSH, etc.
 Therefore, we will create a new SSH key for the user **siteconnect** and
 store it in ```~/.ssh/config``` folder.
 
-During the creation, you will get asked about setting a Password for the SSH Key.
-I recomment always the highest possibol protection but in the real world,
-especaly by automated processes, a SSH Key without password is more handy then with.
+During the creation, you will get asked about setting a password for the SSH Key.
+I always recommend the highest possible protection but in the real world,
+especially by automated processes, and SSH Key without the password is handier than with a Key Password.
 
 ```bash
 $ ssh-keygen -t rsa -b 4096 -C "siteconnect"
 ```
 
-Aternatively, you can also use an already created SSH key
-if you have one you normaly use. Feel free and copy this key for the
+Alternatively, you can also use an already created SSH key
+if you have one you usually use. Feel free and copy this key for the
 user **siteconnect**
 
 [BACK](#Deployment-Steps)
 
 ## Create ./ssh/config
 
-It is also helpfull, if you can use the **ssh-agent** to foreard the private key,
+It is also helpful to use the **ssh-agent** to forward the private key
 if you do a "chain-login" to another host on SSH. Let's create a config file
 and add your SSH key.
 
 ```bash
 $ bash -c 'cat << EOF > ~/.ssh/config
 Host *
- ForwardAgent  yes
+ ForwardAgent yes
  UseKeychain yes
  IdentityFile ~/.ssh/id_rsa
 EOF'
 ```
 
-Usind the ```-A``` option to forward the key to another SSH session,
-you need to enable the **ssh-agent** every time, before you do the SSH login.
+Using the ```-A``` option to forward the key to another SSH session,
+you need to enable the **ssh-agent** every time before you do the SSH login.
 Here an example of how to enable it:
 
 ```bash
@@ -250,10 +324,10 @@ eval "$(ssh-agent -s)"
 
 ## Create /etc/wsl.conf
 
-Finalizing the Distribution, we should to create a **wsl.conf** file.
+Finalizing the Distribution, we should create a **wsl.conf** file.
 Here we can set defaults of the Distribution.
 
-Find detailed information about the posibilties here:
+Find detailed information about the possibilities here:
 - [WSL commands and launch configurations](https://docs.microsoft.com/en-us/windows/wsl/wsl-config)
 
 ```bash
@@ -273,23 +347,23 @@ PS C:\> wsl.exe --terminate siteconnect-ubuntu-18.04
 
 > !!! IMPORTANT !!!
 > If you change/add settings to the config file **/etc/wsl.conf**, the Distribution needs to get
-> **teminated** after exit. Termiination does a complete shutdown of the WSL Distribution. If you reconnect 
-> to it, it is like after a reboot. The settings in the configuration file gets applied by this reboot.
+> **terminated** after exit. Termination does a complete shutdown of the WSL Distribution. If you reconnect 
+> to it, it is like after a reboot. The settings in the configuration file get applied by this reboot.
 
-Restart the ```siteconnect-ubuntu-18.04``` Distribution by simply type:
+Restart the ```siteconnect-ubuntu-18.04``` Distribution by type:
 ```pws
 PS C:\> wsl.exe
 ```
 
 You might realize, the login user is now **siteconnect**.
-We achived this by setting the default username to **siteconnect**.
+We achieved this by setting the default username to **siteconnect**.
 
 [BACK](#Deployment-Steps)
 
 ## Set up Node.JS
 
 Now we are ready to install NodeJS into the Distribution.
-I simply followed the description on:
+I followed the description on:
 
 - [Set up your Node.js development environment with WSL 2](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-wsl2)
 
@@ -300,14 +374,14 @@ $ nvm install node
 $ nvm install --lts
 ```
 
-In addidion, I installed the Postgress extension:
+Besides, I installed the Postgress extension:
 ```bash
 $ npm install pg
 ```
 
 [BACK](#Deployment-Steps)
 
-## Postrgres Database Connect
+## Postgres Database Connect
 
 Before we check the setup with Visual Studio Code, we need to set the Database connection.
 
@@ -321,10 +395,10 @@ EOF'
 
 > EXPLAINATION:
 > Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely.
-> This means, we need to point it to the Gateway IP of the WSL envirment. Adding **DATABASE_URL**
+> This means we need to point it to the Gateway IP of the WSL environment. Adding **DATABASE_URL**
 > to the **.bashrc** keeps it persistent.
 
-Verfy the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
+Verify the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
 
 Check it with:
 ```bash
@@ -333,118 +407,40 @@ $ echo $DATABASE_URL
 
 This shold output: ```postgresql://siteconnect:siteconnect@<YourGatewayIP>:5432/siteconnect```
 
-[BACK](#Deployment-Steps)
-
-# Docker Container
-
-The next part descips how we run the **postgres** databse in a Docker container.
-
-Docker Desktop for Windows needs to be successfully intalled. [Check the Prerequisites.](#prerequsites)
-
-Short explaination:
-
-Docker is a new modern IT term. There are a lot of information in the Internet about
-the posibliries you have by building or using Docker container. In simple words, 
-Docker is a technologie that allows you to run microservices as a postgres Database Server
-in a minimum invirment. No Operationg system to deploy, as we know it from VMware or HyperV.
-The Database runs in a container Framework without any kind of Hypervisor in the background.
-
-> IMPORTENT:
-> - Docker Container needs to deployed.
-> - They can run in the background.
-> - You can stop/start container after deployment.
-> - Find 10.000 preconfigured contains at [DockerHUB](http://www.dockerhub.com)
-> 
-> You should login to [DockerHUB](http://www.dockerhub.com) and create a personal user.
-> This is free of chage but opens the [DockerHUB](http://www.dockerhub.com) Repositry with
-> all the preconfigured Containers, including Documentation, etc. I highly recommend it.
-
-Here some simple docker commandlines you should know:
-
-```docker image ls```
-- list all downloaded images (containers)
-
-```docker container ls -a```
-- shows all running/not-running containers
-
-```docker container rm [CONTAINER-ID]```
-- delete a container
-
-```docker container stop [CONTAINER-ID]```
-- stops a deployed container
-
-```docker container start [CONTAINER-ID]```
-- starts a deployed container
-
-```docker container exec -it [CONTAINER-ID] bash```
-- starts a command shell to a container (bash) - simular to a SSH connection to a server.
-
-```docker volume ls```
-- lists created (persistent) volumes
-
-Let's go to the **postgres** deployment.
-
-[BACK](#Deployment-Steps)
-
-## Run Postgres Container
-
-**Settings:**
-- Name: siteconnect
-- Port: 5432 (listen)
-- POSTGRES_USER: siteconnect
-- POSTGRES_PASSWORD: siteconnect
-- Data Volume (Persitent data): siteconnect_data
-- Version: postgres:10
-
-**Command:**
-```pws
-PS C:\> docker container run -d --name siteconnect -p 5432:5432 -e POSTGRES_USER=siteconnect -e POSTGRES_PASSWORD=siteconnect -v siteconnect_data:/var/lib/postgresql/data postgres:10
-```
-
-**Verify:**
-```pws
-PS C:\> docker container ls
-```
-
-```bash
-CONTAINER ID   IMAGE         COMMAND                  CREATED       STATUS       PORTS                    NAMES
-b8f0874826c6   postgres:10   "docker-entrypoint.s…"   5 hours ago   Up 5 hours   0.0.0.0:5432->5432/tcp   siteconnect
-```
-
-The Container runs successfully, If your output of ```docker container ls``` is simual to the one above.
-
-# Verify
-
 You can check your success by testing the database connection.
 
-With the Postgress client:
+Login/Start your ```siteconnect-ubuntu-18.04``` Distribution and try the following
+connections to the Postgress Database Server, running in the Docker Container.
 
-Test (Postgres client):
-psql -h `ip route show | awk '{print $3}' | head -n 1` -p 5432 -U siteconnect
---> \l
---> \q
+**With the native Postgress client:**
 
-With a smiple connection script (Node.JS) including the ```DATABASE_URL``` Variable:
+```bash
+$ psql -h `ip route show | awk '{print $3}' | head -n 1` -p 5432 -U siteconnect
+```
 
+**With a smiple connection script (Node.JS) including the ```DATABASE_URL``` Variable:***
 
 ```node
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL
 const pool = new Pool({
-  connectionString,
-  })
-  pool.query('SELECT NOW()', (err, res) => {
-    console.log(err, res)
-      pool.end()
-      })
-      const client = new Client({
-        connectionString,
+ connectionString,
+ })
+ pool.query('SELECT NOW()', (err, res) => {
+ console.log(err, res)
+ pool.end()
+ })
+ const client = new Client({
+ connectionString,
 })
 client.connect()
 client.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-    client.end()
-    })
+ console.log(err, res)
+ client.end()
+ })
 ```
+
+Both Tests should run successfully. If you face issues, check if the Container is still running,
+with ```docker container ls```.
 
 [BACK](#Deployment-Steps)
