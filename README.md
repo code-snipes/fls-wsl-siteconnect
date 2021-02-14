@@ -425,7 +425,7 @@ connections to the Postgress Database Server, running in the Docker Container.
 $ psql -h `ip route show | awk '{print $3}' | head -n 1` -p 5432 -U siteconnect
 ```
 
-**With a smiple connection script (Node.JS) including the ```DATABASE_URL``` Variable:***
+**With a smiple connection script (Node.JS) including the ```DATABASE_URL``` Variable:**
 
 ```node
 const { Pool, Client } = require('pg')
