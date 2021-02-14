@@ -246,7 +246,7 @@ NAME STATE VERSION
  docker-desktop Running 2
 ```
 
-The ```*``` made Distribution is the default.
+The ```*``` made ```siteconnect-ubuntu-18.04``` Distribution as the default.
 
 [BACK](#Deployment-Steps)
 
