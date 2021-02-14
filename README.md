@@ -59,7 +59,7 @@ Create the following folder on your C Drive:
 C:\Distributions
 ```
 
-It will be our place to save our modifications.
+It will be the place to save modifications.
 
 [BACK](#Deployment-Steps)
 
