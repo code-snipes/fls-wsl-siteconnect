@@ -69,7 +69,8 @@ There is a lot of information about Docker on the Internet. How you use, build,
 and run Docker containers. Docker Container is a technology that allows you to run microservices, as an example, a Postgres Database Server in a minimum, light, and customized environment. No Operating system to deploy, as we know it from VMware or HyperV.
 The Database runs in a container Framework without any Hypervisor in the background.
 
-> IMPORTENT:
+> !!!! IMPORTANT !!!!
+>
 > - Containers getting deployed.
 > - They can run in the background.
 > - You can stop/start container after deployment.
@@ -268,7 +269,8 @@ If the commands ran successfully, you need to ```exit``` the Distribution and re
 PS C:\> wsl.exe --user siteconnect
 ```
 
-> !!! IMPOIMPORTEN !!!
+> !!!! IMPORTANT !!!!
+>
 > Be sure, you are in the linux-home-directory of the user **siteconnect**.
 > Test it by typing ```pwd```. Your Output should look like: ```/home/siteconnect```.
 > If the Output shows another folder, use ```cd``` to jump into user's **siteconnect**** Linux-home-directory.
@@ -345,7 +347,8 @@ After applying, **exit** the Distribution and **terminate** it with the followin
 PS C:\> wsl.exe --terminate siteconnect-ubuntu-18.04
 ```
 
-> !!! IMPORTANT !!!
+> !!!! IMPORTANT !!!!
+>
 > If you change/add settings to the config file **/etc/wsl.conf**, the Distribution needs to get
 > **terminated** after exit. Termination does a complete shutdown of the WSL Distribution. If you reconnect 
 > to it, it is like after a reboot. The settings in the configuration file get applied by this reboot.
