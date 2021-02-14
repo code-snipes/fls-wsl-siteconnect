@@ -441,6 +441,8 @@ client.query('SELECT NOW()', (err, res) => {
 ```
 
 Both Tests should run successfully. If you face issues, check if the Container is still running,
-with ```docker container ls```.
+with:
+
+ ```docker container ls```
 
 [BACK](#Deployment-Steps)
