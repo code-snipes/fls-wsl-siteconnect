@@ -8,7 +8,7 @@
 
 ### Select Distribution
 <p float="left">
-  <img src="images/wsl_access_siteconnect-ubutu-18.04.png" width="640" />
+  <img src="images/wsl_start_vsc_siteconnect-ubuntu-18.04" width="640" />
 </p>
 
 ### Status Bar
