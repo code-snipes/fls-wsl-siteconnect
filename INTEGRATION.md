@@ -2,6 +2,12 @@
 
 ## Starting VSC
 
+### Green Button
+
+<p float="left">
+  <img src="images/green_button.png" width="200" />
+</p>
+
 <p float="left">
   <img src="images/wsl_start_vsc_disrtibution_new_window.png" width="640" />
 </p>
