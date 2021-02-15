@@ -6,7 +6,8 @@ the parts of the deployment.
 
 - Visual Studio Code
     - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)
-    - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
+        - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
+        - [Select siteconnect-ubuntu-18.04 Distribution](#Select-siteconnect-ubuntu-18-04-Distribution)
 - Windows Linux Subsystem (WSL)
 - Terminal
 - Docker Desktop
@@ -27,16 +28,26 @@ Simply start ```Visual Studio Code``` on your Computer.
 
 ## Open a new VSC Window with the WSL Distribution
 
+After you opend ```Visual Studio Code``` you might already realized the new green button
+in the left down corner of you ```Visual Studio Code``` window. This is you starting point
+of accessing/attaching your ```WSL``` Distribution to ```Visual Studio Code```.
+
 ![Open-VSC](images/vsc-002.png)
+
+Simply chlick on it and you will get the posibilty to start a new ```Visual Studio Code```
+Window into the ```WSL``` Distribution:
 
 ![Open-VSC](images/vsc-003.png)
 
+Select ```Remote-WSL: New Window using Distrio...``` to go ahead.
+
 [BACK](#Working-with-the-deployment)
 
-## Select Distribution
-<p float="left">
-  <img src="images/wsl_start_vsc_siteconnect-ubuntu-18.04.png" width="640" />
-</p>
+## Select siteconnect-ubuntu-18.04 Distribution
+
+![Open-VSC](images/vsc-004.png)
+
+[BACK](#Working-with-the-deployment)
 
 ## Status Bar connection message
 
