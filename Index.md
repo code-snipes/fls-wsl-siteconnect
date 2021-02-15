@@ -35,10 +35,10 @@
     - Terminal
         - [Starting: WSL Distribution (Terminal) in parallel](INTEGRATION.md#Starting-WSL-Distribution-Terminal-in-parallel)
 
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
-  - [Acknowledgements](#acknowledgements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 ## Contributing
 
