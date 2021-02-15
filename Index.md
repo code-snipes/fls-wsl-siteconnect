@@ -48,6 +48,6 @@
 [issues-shield]: https://img.shields.io/github/issues/code-snipes/fls-wsl-siteconnect.svg?style=flat-square
 [issues-url]: https://github.com/code-snipes/fls-wsl-siteconnect/issues
 [license-shield]: https://img.shields.io/github/license/code-snipes/fls-wsl-siteconnect.svg?style=flat-square
-[license-url]: https://github.com/code-snipes/fls-wsl-siteconnect/blob/master/LICENSE.txt
+[license-url]: https://github.com/code-snipes/fls-wsl-siteconnect/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/patrickhayo/?locale=en_US
