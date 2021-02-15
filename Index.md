@@ -18,9 +18,7 @@
 
 ![Setup](https://lucid.app/publicSegments/view/74aff30f-a632-4245-b004-4338cb8d9fcc/image.png)
 
-## Depoyment Steps
-
-- Development Environment
+- [Development Environment](#README.md)
     - [Prerequistes](README.md#Prerequistes)
     - [Create a work Folder](README.md#Create-a-work-folder)
     - [Docker Container](README.md#Docker-Container)
@@ -28,15 +26,12 @@
     - [Build a Distribution Template](README.md#Build-a-Distribution-Template)
     - [Deoploy a Project Distribution](README.md#Deoploy-a-Project-Distribution)
 
-## Tutorial
-
- - Visual Studio Code
-    - [Starting: Visual Studio Code](INTEGRATION.md#Starting-Visual-Studio-Code)
-    - [Full Integration View of WSL in Visual Studio Code](INTEGRATION.md#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
-
-- Terminal
-    - [Starting: WSL Distribution (Terminal) in parallel](INTEGRATION.md#Starting-WSL-Distribution-Terminal-in-parallel)
-
+- [Tutorials](#INTEGRATION.md)
+    - Visual Studio Code
+        - [Starting: Visual Studio Code](INTEGRATION.md#Starting-Visual-Studio-Code)
+        - [Full Integration View of WSL in Visual Studio Code](INTEGRATION.md#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
+    - Terminal
+        - [Starting: WSL Distribution (Terminal) in parallel](INTEGRATION.md#Starting-WSL-Distribution-Terminal-in-parallel)
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/code-snipes/fls-wsl-siteconnect.svg?style=flat-square
