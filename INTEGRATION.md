@@ -4,10 +4,9 @@ After we acombished the installation / deployment of the Develpment evirment, de
 We are now ready to see how to integrate it in ```Visual Studio Code```and work with all
 the parts of the deployment.
 
-We will use the following Applications / Technolgies:
-
 - Visual Studio Code
     - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)
+    - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
 - Windows Linux Subsystem (WSL)
 - Terminal
 - Docker Desktop
@@ -26,15 +25,13 @@ Simply start ```Visual Studio Code``` on your Computer.
 
 [BACK](#Working-with-the-deployment)
 
-## Open a Window with the WSL Distribution
+## Open a new VSC Window with the WSL Distribution
 
-<p float="left">
-  <img src="images/vsc_remote_button.png" width="200" />
-</p>
+![Open-VSC](images/vsc-002.png)
 
-<p float="left">
-  <img src="images/wsl_start_vsc_disrtibution_new_window.png" width="640" />
-</p>
+![Open-VSC](images/vsc-003.png)
+
+[BACK](#Working-with-the-deployment)
 
 ## Select Distribution
 <p float="left">
