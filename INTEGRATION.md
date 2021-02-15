@@ -11,9 +11,10 @@ the parts of the deployment.
         - [Adding helpful Extentions to Visual Studio Code](#Adding-helpful-Extentions-to-Visual-Studio-Code)
         - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote-Session)
     - [Full Integration View of WSL in Visual Studio Code](#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
-- Windows Linux Subsystem (WSL)
-    - [Starting: WSL Distribution (Terminal) in parallel](#Starting-WSL-Distribution-Terminal-in-parallel)
+
 - Terminal
+    - [Starting: WSL Distribution (Terminal) in parallel](#Starting-WSL-Distribution-Terminal-in-parallel)
+
 - Docker Desktop
 
 # Starting: Visual Studio Code
@@ -108,6 +109,15 @@ This was the final step on ```Visual Studio Code```.
 [BACK](#Working-with-the-deployment)
 
 # Starting: WSL Distribution (Terminal) in parallel
+
+Even you can not share a login session, you are able to open another session to your
+WSL Distribution and do customizations that appears in all open sessions. 
+
+We use the installed ```Terminal``` Application from the Micorosft Store
+to make our life easy, and handling the different Distributions we might have.
+
+Open the ```Terminal``` Aplication and select the ```siteconnect-ubuntu-18.04``` Distibution
+to open, as shown here:
 
 ![Open-VSC](images/wsl-001.png)
 
