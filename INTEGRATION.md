@@ -6,10 +6,10 @@ Simply start ```Visual Studio Code``` on your Computer.
 
 <p float="left">
   <img src="images/vsc_open_default.png" width="640" />
-  <p>
+  <p width="640">
   You maybe will get a message, Visual Studio Code realized
   WSL installed on your computer and will ask you to intall the integration.
-  You need to say ```OK``` to go ahed with installing this integration.
+  You need to say <b>OK</b>to go ahed with installing this integration.
   This is essential for all following steps to have this installed.
   </p>
 </p>
