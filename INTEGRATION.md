@@ -8,6 +8,8 @@ the parts of the deployment.
     - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)
         - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
         - [Select siteconnect-ubuntu-18.04 Distribution](#Select-siteconnect-ubuntu-18-04-Distribution)
+        - [Adding helpful Extentions to Visual Studio Code](#Adding-helpful-Extentions-to-Visual-Studio-Code)
+        - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote Session)
 - Windows Linux Subsystem (WSL)
 - Terminal
 - Docker Desktop
@@ -50,30 +52,51 @@ Now, selet your created ```siteconnect-ubuntu-18.04``` and open it.
 ![Open-VSC](images/vsc-004.png)
 
 If the connection process ran successfully, you will realize, the
-statusbar of ```Visual Studio Code``` will change again. It shows
+statusbar of ```Visual Studio Code``` has changed again. It shows
 you the connection in the down left corner, like this:
 
 ![Open-VSC](images/vsc-005.png)
 
+You successfully conned to the ```WSL``` Distribution.
+
 [BACK](#Working-with-the-deployment)
 
-## Adding Extentions to VSC
+## Adding helpful Extentions to Visual Studio Code
 
-<p float="left">
-  <img src="images/wsl_vsc_extentions_installed.png" width="300" />
-</p>
+Making our life easy, it is helpfull to install some ```Visual Studio Code```
+Extentions to the Remote Connection. This is mainely to help us by
+dealing with ```WSL```, ```Docker```, and ```Postgress```.
+Feel also free to install the Extentions you need. Take care that you
+install it into the ```Remote-Session``` and not local.
 
-## Open a folder (/home/siteconnect)
+![Open-VSC](images/vsc-006.png)
 
-<p float="left">
-  <img src="images/vsc_open_home_folder_siteconnect.png" width="640" />
-</p>
+[BACK](#Working-with-the-deployment)
 
-## After starting VSC with installed VSC extentions
+## Open a folder (/home/siteconnect) in the Remote Session
 
-<p float="left">
-  <img src="images/vsc_open_home_with_terminal.png" width="640" />
-</p>
+let's open the **siteconnect's** user home directory into the ```Visual Studio Code```
+session. You can simpy check the: ```Add Folder``` button:
+
+![Open-VSC](images/vsc-007.png)
+
+Select the folder you want to open. Default is set to the **siteconnect's**
+home folder. I highly recomment, you use this folder as root of all
+your actions. It makes it easy to point scripts and application configs
+to the home folder:
+
+![Open-VSC](images/vsc-008.png)
+
+Now you should get a simular ```Visual Studio Code``` Windows as shown here:
+
+![Open-VSC](images/vsc-008.png)
+
+You will see the folder you opend (/home/siteconnect) with all the conetent, 
+and a ```Terminal``` section that points to the **siteconnect's** home directory.
+
+This was the final step on ```Visual Studio Code```.
+
+[BACK](#Working-with-the-deployment)
 
 # Starting: WSL Distribution in Terminal in parallel
 
