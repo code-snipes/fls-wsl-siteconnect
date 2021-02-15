@@ -20,7 +20,7 @@
 
 ## Overview
 
-- [Development Environment](#README.md)
+- [Development Environment](README.md)
     - [Prerequistes](README.md#Prerequistes)
     - [Create a work Folder](README.md#Create-a-work-folder)
     - [Docker Container](README.md#Docker-Container)
@@ -28,7 +28,7 @@
     - [Build a Distribution Template](README.md#Build-a-Distribution-Template)
     - [Deoploy a Project Distribution](README.md#Deoploy-a-Project-Distribution)
 
-- [Tutorials](#INTEGRATION.md)
+- [Tutorials](INTEGRATION.md)
     - Visual Studio Code
         - [Starting: Visual Studio Code](INTEGRATION.md#Starting-Visual-Studio-Code)
         - [Full Integration View of WSL in Visual Studio Code](INTEGRATION.md#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
