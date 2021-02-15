@@ -57,7 +57,7 @@ Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. S
 
 Project Link: [fls-wsl-siteconnect](https://github.com/code-snipes/fls-wsl-siteconnect)
 
-[Patrick Hayo](patrick.hayo@flsmidth.com)
+[Patrick Hayo](mailto:patrick.hayo@flsmidth.com)
 
 [![N00ky2010](https://img.shields.io/twitter/follow/N00ky2010)](https://www.twitter.com/N00ky2010)
 
