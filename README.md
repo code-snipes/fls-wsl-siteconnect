@@ -36,7 +36,8 @@
 > the integration of all the services into Visual Studio Code, including
 > some examples of how to use the created Development Environment.
 >
-> Follow the folloing link to the Tutorial Document: ![Tutorial](INTEGRAION.md)
+> Follow the folloing link to the Tutorial Document: 
+> - **Tutorial:** https://github.com/code-snipes/fls-wsl-siteconnect/blob/main/INTEGRATION.md
 
 # Prerequistes
 
