@@ -1,8 +1,7 @@
 # Working with the deployment
 
-After we acombished the [```Deployment Steps```](https://github.com/code-snipes/fls-wsl-siteconnect/blob/main/README.md) 
-of the Develpment evirment, desciped before. We are now ready to see how to integrate it in ```Visual Studio Code```
-and work with all the parts of the deployment.
+> After we acombished the [```Deployment Steps```](README.md) We are ready to see how 
+> to integrate it in ```Visual Studio Code``` now and work with all the parts of the deployment.
 
 - Visual Studio Code
     - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)

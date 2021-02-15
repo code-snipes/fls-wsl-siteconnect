@@ -1,24 +1,11 @@
-# Node.JS Developer Environment
-
-> Building a solid developer environment with NodeJS in a WSL Distribution 
-> and a Connection to a Database Server, running in a Container.
->
-> - **Project:** ```SiteConnect```
-> - **Elements:** Postgres DB, Node.JS, Visual Studio Code, DBeaver
-> - **Engine:** Docker, Windows Subsystem for Linux (WSL)
-
-# Setup Design
-
-![Setup](https://lucid.app/publicSegments/view/74aff30f-a632-4245-b004-4338cb8d9fcc/image.png)
-
-# Deployment Steps
+# Development Environment
 
 > After successfull ran to all the Deployment Steps below, you will find a Tutorial about
 > the integration of all the services into Visual Studio Code, including
 > some examples of how to use the created Development Environment.
 >
 > Follow the folloing link to the Tutorial Document: 
-> - **Tutorial:** https://github.com/code-snipes/fls-wsl-siteconnect/blob/main/INTEGRATION.md
+> ```Working with the deployment```](INTEGRATION.md)
 
 - [Prerequistes](#Prerequistes)
 - [Create a work Folder](#Create-a-work-folder)
