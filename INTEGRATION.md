@@ -1,15 +1,27 @@
 # Working with the deployment
 
+After we acombished the installation / deployment of the Develpment evirment, desciped before.
+We are now ready to see how to integrate it in ```Visual Studio Code```and work with all
+the parts of the deployment.
+
+We will use the following Applications / Technolgies:
+
+- Visual Studio Code
+    - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)
+- Windows Linux Subsystem (WSL)
+- Terminal
+- Docker Desktop
+
 # Starting: Visual Studio Code
 
 Simply start ```Visual Studio Code``` on your Computer.
 
 ![Open-VSC](images/vsc-001.png)
 
-> **COMMENT:** You maybe will get a message, that **Visual Studio Code** realized
-> WSL installed on your computer during the start. It will ask you to intall the integration.
+> **COMMENT:** You maybe will get a message, that ```Visual Studio Code``` realized
+> ```WSL``` installed on your computer during the start. It will ask you to intall the integration.
 > You need to say ```OK``` if this shows up to go ahed with installing this integration.
-> This happens usualy during the first starto of **Visual Studio Code** after **WSL** got installed
+> This happens usualy during the first starto of ```Visual Studio Code``` after **WSL** got installed
 > Allowing to install this integration is essential for all following steps to have this installed.
 
 [BACK](#Working-with-the-deployment)
