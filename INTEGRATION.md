@@ -89,7 +89,7 @@ to the home folder:
 
 Now you should get a simular ```Visual Studio Code``` Windows as shown here:
 
-![Open-VSC](images/vsc-008.png)
+![Open-VSC](images/vsc-009.png)
 
 You will see the folder you opend (/home/siteconnect) with all the conetent, 
 and a ```Terminal``` section that points to the **siteconnect's** home directory.
