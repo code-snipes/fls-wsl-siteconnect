@@ -5,7 +5,7 @@
 ### Green Button
 
 <p float="left">
-  <img src="images/green_button.png" width="200" />
+  <img src="images/vsc_remote_button.png" width="200" />
 </p>
 
 <p float="left">
