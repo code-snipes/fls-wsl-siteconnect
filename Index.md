@@ -35,6 +35,40 @@
     - Terminal
         - [Starting: WSL Distribution (Terminal) in parallel](INTEGRATION.md#Starting-WSL-Distribution-Terminal-in-parallel)
 
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
+  - [Acknowledgements](#acknowledgements)
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. [Fork](https://docs.github.com/en/enterprise/2.13/user/articles/fork-a-repo) the Project
+2. Create your Feature Branch `git checkout -b feature/AmazingFeature`
+3. Commit your Changes `git commit -m 'Add some AmazingFeature'`
+4. Push to the Branch `git push origin feature/AmazingFeature`
+5. Open a Pull Request
+
+## License
+
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. See `LICENSE` for more information.
+
+## Contact
+
+Project Link: [https://github.com/adminph-de/ps-powerbi-asr-report](https://github.com/adminph-de/ps-powerbi-asr-report)
+
+[Patrick Hayo](patrick.hayo@flsmidth.com)
+
+[![N00ky2010](https://img.shields.io/twitter/follow/N00ky2010)](https://www.twitter.com/N00ky2010)
+
+## Acknowledgements
+
+* [Janaina Laguardia Areal Hyldvang, Ph.D.](https://www.linkedin.com/in/janainahyldvang/)
+* [Jakob Daugaard](https://www.linkedin.com/in/jakobdaugaard/?locale=en_US)
+* [Senthil Kumar Bose](https://www.linkedin.com/in/senthil-kumar-bose-6900582/)
+* [Javed Khan](https://www.linkedin.com/in/javed-khan-674863164/)
+
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/code-snipes/fls-wsl-siteconnect.svg?style=flat-square
 [contributors-url]: https://github.com/code-snipes/fls-wsl-siteconnect/graphs/contributors
