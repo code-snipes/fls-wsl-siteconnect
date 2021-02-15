@@ -32,6 +32,12 @@
     - [Set up Node.JS](#Set-up-NodeJS)
     - [Postrgres Database Connect](#Postgres-Database-Connect)
 
+> After successfull ran to all the topics above, you will find a Tutorial about
+> the integration of all the services into Visual Studio Code, including
+> some examples of how to use the created Development Environment.
+>
+> Follow the folloing link to the Tutorial Document: ![Tutorial](INTEGRAION.md)
+
 # Prerequistes
 
 All the following applications need installation on your Developer PC before you begin.
