@@ -34,3 +34,9 @@
 <p float="left">
   <img src="images/vsc_open_home_with_terminal.png" width="640" />
 </p>
+
+# Adding Extentions to VSC
+
+<p float="left">
+  <img src="images/wsl_vsc_extentions_installed.png" width="300" />
+</p>
