@@ -45,15 +45,17 @@ Select ```Remote-WSL: New Window using Distrio...``` to go ahead.
 
 ## Select siteconnect-ubuntu-18.04 Distribution
 
+Now, selet your created ```siteconnect-ubuntu-18.04``` and open it.
+
 ![Open-VSC](images/vsc-004.png)
 
+If the connection process ran successfully, you will realize, the
+statusbar of ```Visual Studio Code``` will change again. It shows
+you the connection in the down left corner, like this:
+
+![Open-VSC](images/vsc-005.png)
+
 [BACK](#Working-with-the-deployment)
-
-## Status Bar connection message
-
-<p float="left">
-  <img src="images/vsc_statusbar_remote-connection.png" width="640" />
-</p>
 
 ## Adding Extentions to VSC
 
