@@ -9,7 +9,8 @@ the parts of the deployment.
         - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
         - [Select siteconnect-ubuntu-18.04 Distribution](#Select-siteconnect-ubuntu-18-04-Distribution)
         - [Adding helpful Extentions to Visual Studio Code](#Adding-helpful-Extentions-to-Visual-Studio-Code)
-        - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote Session)
+        - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote-Session)
+    - [Full Integration View of WSL in Visual Studio Code](#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
 - Windows Linux Subsystem (WSL)
 - Terminal
 - Docker Desktop
@@ -86,6 +87,8 @@ your actions. It makes it easy to point scripts and application configs
 to the home folder:
 
 ![Open-VSC](images/vsc-008.png)
+
+## Full Integration View of WSL in Visual Studio Code
 
 Now you should get a simular ```Visual Studio Code``` Windows as shown here:
 
