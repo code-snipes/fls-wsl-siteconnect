@@ -1,5 +1,30 @@
 # Visual Studio Code
 
+## Starting VSC
+
 <p float="left">
   <img src="images/wsl_start_vsc_disrtibution_new_window.png" width="640" />
+</p>
+
+### Select Distribution
+<p float="left">
+  <img src="images/wsl_access_siteconnect-ubutu-18.04.png" width="640" />
+</p>
+
+### Status Bar
+
+<p float="left">
+  <img src="images/vsc_statusbar_remote-connection.png" width="640" />
+</p>
+
+## Open a folder (/home/siteconnect)
+
+<p float="left">
+  <img src="images/vsc_open_home_folder_siteconnect.png" width="640" />
+</p>
+
+### After starting VSC with WSL integration
+
+<p float="left">
+  <img src="images/vsc_open_home_with_terminal.png" width="640" />
 </p>
