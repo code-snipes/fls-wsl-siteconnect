@@ -56,7 +56,7 @@ Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. S
 
 ## Contact
 
-Project Link: [https://github.com/adminph-de/ps-powerbi-asr-report](https://github.com/adminph-de/ps-powerbi-asr-report)
+Project Link: [fls-wsl-siteconnect](https://github.com/code-snipes/fls-wsl-siteconnect)
 
 [Patrick Hayo](patrick.hayo@flsmidth.com)
 
