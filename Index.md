@@ -7,6 +7,10 @@
 > - **Elements:** Postgres DB, Node.JS, Visual Studio Code, DBeaver
 > - **Engine:** Docker, Windows Subsystem for Linux (WSL)
 
+## Setup Design
+
+![Setup](https://lucid.app/publicSegments/view/74aff30f-a632-4245-b004-4338cb8d9fcc/image.png)
+
 ## Depoyment Steps
 
 - [Prerequistes](README.md#Prerequistes)
