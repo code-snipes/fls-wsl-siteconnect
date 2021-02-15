@@ -13,6 +13,13 @@
 
 # Deployment Steps
 
+> After successfull ran to all the topics below, you will find a Tutorial about
+> the integration of all the services into Visual Studio Code, including
+> some examples of how to use the created Development Environment.
+>
+> Follow the folloing link to the Tutorial Document: 
+> - **Tutorial:** https://github.com/code-snipes/fls-wsl-siteconnect/blob/main/INTEGRATION.md
+
 - [Prerequistes](#Prerequistes)
 - [Create a work Folder](#Create-a-work-folder)
 - [Docker Container](#Docker-Container)
@@ -31,13 +38,6 @@
     - [Create /etc/wsl.conf](#Create-etcwslconf)
     - [Set up Node.JS](#Set-up-NodeJS)
     - [Postrgres Database Connect](#Postgres-Database-Connect)
-
-> After successfull ran to all the topics above, you will find a Tutorial about
-> the integration of all the services into Visual Studio Code, including
-> some examples of how to use the created Development Environment.
->
-> Follow the folloing link to the Tutorial Document: 
-> - **Tutorial:** https://github.com/code-snipes/fls-wsl-siteconnect/blob/main/INTEGRATION.md
 
 # Prerequistes
 
