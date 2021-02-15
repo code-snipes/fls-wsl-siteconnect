@@ -38,7 +38,6 @@
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 ## Contributing
 
@@ -61,13 +60,6 @@ Project Link: [fls-wsl-siteconnect](https://github.com/code-snipes/fls-wsl-sitec
 [Patrick Hayo](patrick.hayo@flsmidth.com)
 
 [![N00ky2010](https://img.shields.io/twitter/follow/N00ky2010)](https://www.twitter.com/N00ky2010)
-
-## Acknowledgements
-
-* [Janaina Laguardia Areal Hyldvang, Ph.D.](https://www.linkedin.com/in/janainahyldvang/)
-* [Jakob Daugaard](https://www.linkedin.com/in/jakobdaugaard/?locale=en_US)
-* [Senthil Kumar Bose](https://www.linkedin.com/in/senthil-kumar-bose-6900582/)
-* [Javed Khan](https://www.linkedin.com/in/javed-khan-674863164/)
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/code-snipes/fls-wsl-siteconnect.svg?style=flat-square
