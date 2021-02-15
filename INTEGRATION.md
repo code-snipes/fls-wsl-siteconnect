@@ -8,10 +8,11 @@ Simply start ```Visual Studio Code``` on your Computer.
   <img src="images/vsc_open_default.png" width="640" />
 </p>
 
-> **COMMENT:** You maybe will get a message, Visual Studio Code realized
-> WSL installed on your computer and will ask you to intall the integration.
-> You need to say ```OK``` to go ahed with installing this integration.
-> This is essential for all following steps to have this installed.
+> **COMMENT:** You maybe will get a message, that **Visual Studio Code** realized
+> WSL installed on your computer during the start. It will ask you to intall the integration.
+> You need to say ```OK``` if this shows up to go ahed with installing this integration.
+> This happens usualy during the first starto of **Visual Studio Code** after **WSL** got installed
+> Allowing to install this integration is essential for all following steps to have this installed.
 
 [BACK](#Working-with-the-deployment)
 
