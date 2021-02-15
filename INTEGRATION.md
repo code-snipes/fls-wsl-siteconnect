@@ -109,6 +109,6 @@ This was the final step on ```Visual Studio Code```.
 
 # Starting: WSL Distribution (Terminal) in parallel
 
-![Open-VSC](images/vsc-009.png)
+![Open-VSC](images/wsl-001.png)
 
 [BACK](#Working-with-the-deployment)
