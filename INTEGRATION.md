@@ -12,6 +12,7 @@ the parts of the deployment.
         - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote-Session)
     - [Full Integration View of WSL in Visual Studio Code](#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
 - Windows Linux Subsystem (WSL)
+    [Starting: WSL Distribution (Terminal) in parallel](#Starting-WSL-Distribution-Terminal-in-parallel)
 - Terminal
 - Docker Desktop
 
@@ -88,21 +89,26 @@ to the home folder:
 
 ![Open-VSC](images/vsc-008.png)
 
+[BACK](#Working-with-the-deployment)
+
 ## Full Integration View of WSL in Visual Studio Code
 
 Now you should get a simular ```Visual Studio Code``` Windows as shown here:
 
 ![Open-VSC](images/vsc-009.png)
 
-You will see the folder you opend (/home/siteconnect) with all the conetent, 
-and a ```Terminal``` section that points to the **siteconnect's** home directory.
+**You will see:**
+- The folder you opend (/home/siteconnect) with all the conetent. 
+- A ```Terminal``` section that points to the **siteconnect's** home directory.
+- All installed integration in the Icon Bar on the left.
+- The succesfull conected WSL Distribution (green in the Status Bar).
 
 This was the final step on ```Visual Studio Code```.
 
 [BACK](#Working-with-the-deployment)
 
-# Starting: WSL Distribution in Terminal in parallel
+# Starting: WSL Distribution (Terminal) in parallel
 
-<p float="left">
-  <img src="images/wsl_access_siteconnect-ubutu-18.04.png" width="640" />
-</p>
+![Open-VSC](images/vsc-009.png)
+
+[BACK](#Working-with-the-deployment)
