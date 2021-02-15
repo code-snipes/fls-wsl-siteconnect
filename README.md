@@ -13,7 +13,7 @@
 
 # Deployment Steps
 
-> After successfull ran to all the topics below, you will find a Tutorial about
+> After successfull ran to all the Deployment Steps below, you will find a Tutorial about
 > the integration of all the services into Visual Studio Code, including
 > some examples of how to use the created Development Environment.
 >
