@@ -23,7 +23,7 @@ Simply start ```Visual Studio Code```
   <img src="images/wsl_start_vsc_siteconnect-ubuntu-18.04.png" width="640" />
 </p>
 
-### Status Bar
+### Status Bar connection message
 
 <p float="left">
   <img src="images/vsc_statusbar_remote-connection.png" width="640" />
