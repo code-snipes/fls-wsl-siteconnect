@@ -5,7 +5,7 @@
 Simply start ```Visual Studio Code``` on your Computer.
 
 <p float="left">
-  <img src="images/vsc_open_default.png" width="640" />
+  <img src="images/vsc-001.png" width="640" />
 </p>
 
 > **COMMENT:** You maybe will get a message, that **Visual Studio Code** realized
