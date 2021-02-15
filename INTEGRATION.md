@@ -50,5 +50,5 @@ Simply start ```Visual Studio Code```
 # Starting WSL Distribution in Terminal in parallel
 
 <p float="left">
-  <img src="images/wsl_access_siteconnect-ubutu-18.04.png" width="300" />
+  <img src="images/wsl_access_siteconnect-ubutu-18.04.png" width="640" />
 </p>
