@@ -4,10 +4,6 @@
 
 Simply start ```Visual Studio Code``` on your Computer.
 
-<p float="left">
-  <img src="images/vsc-001.png" width="640" />
-</p>
-
 ![Open-VSC](images/vsc-001.png)
 
 > **COMMENT:** You maybe will get a message, that **Visual Studio Code** realized
