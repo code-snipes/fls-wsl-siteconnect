@@ -5,7 +5,7 @@
 Simply start ```Visual Studio Code```
 
 <p float="left">
-  <img src="images/vsc_open_default.png" width="200" />
+  <img src="images/vsc_open_default.png" width="640" />
 </p>
 
 ### Green Button
