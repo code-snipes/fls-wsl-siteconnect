@@ -4,19 +4,19 @@
 > to integrate it in ```Visual Studio Code``` now and work with all the parts of the deployment.
 
 - Visual Studio Code
- - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)
- - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
- - [Select siteconnect-ubuntu-18.04 Distribution](#Select-siteconnect-ubuntu-18-04-Distribution)
- - [Adding helpful Extentions to Visual Studio Code](#Adding-helpful-Extentions-to-Visual-Studio-Code)
- - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote-Session)
- - [Full Integration View of WSL in Visual Studio Code](#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
+    - [Starting: Visual Studio Code](#Starting-Visual-Studio-Code)
+    - [Open a new VSC Window with the WSL Distribution](#Open-a-new-VSC-Window-with-the-WSL-Distribution)
+    - [Select siteconnect-ubuntu-18.04 Distribution](#Select-siteconnect-ubuntu-18-04-Distribution)
+    - [Adding helpful Extentions to Visual Studio Code](#Adding-helpful-Extentions-to-Visual-Studio-Code)
+    - [Open a folder (/home/siteconnect) in the Remote Session](#Open-a-folder-homesiteconnect-in-the-Remote-Session)
+    - [Full Integration View of WSL in Visual Studio Code](#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
 
 - Terminal
- - [Starting: WSL Distribution (Terminal) in parallel](#Starting-WSL-Distribution-Terminal-in-parallel)
- -[Example: Clone a DevOps Repository](#Example-Clone-a-DevOps-Repository)
+    - [Starting: WSL Distribution (Terminal) in parallel](#Starting-WSL-Distribution-Terminal-in-parallel)
+    - [Example: Clone a DevOps Repository](#Example-Clone-a-DevOps-Repository)
 
 - Docker Desktop
- - ```COMING SOON```
+    - ```COMING SOON```
 
 # Starting: Visual Studio Code
 
@@ -130,10 +130,10 @@ DevOps Repository into the ```WSL``` Distribution.
 
 **Requirements:**
 - A valid SSH key, aviable as: ~/.ssh/id_rsa
- - [Generate SSH Key](README.md#Generate-SSH-Key)
+    - [Generate SSH Key](README.md#Generate-SSH-Key)
 
 - GIT needs to be installed as well (yum):
- - [Preparing WSL Ubuntu 18.04 LTS](README.md#Preparing-WSL-Ubuntu-1804-LTS)
+    - [Preparing WSL Ubuntu 18.04 LTS](README.md#Preparing-WSL-Ubuntu-1804-LTS)
 
 Getting the public key, use a simple ```cat``` command:
 
@@ -141,7 +141,7 @@ Getting the public key, use a simple ```cat``` command:
 $ cat ~/.ssh/id_rsa.pub
 ```
 
-![Open-VSC](images/wsl_cat-ssh-pub-key.png)
+![Open-VSC](images/wsl-ssh-001.png)
 
 Copy the output in your ```Clipboard``` (STRG-C). We need it to add the Key
 to your DevOps user Account later. 
@@ -156,13 +156,13 @@ Check it by listing the directory:
 
 In my example, I called one of my Repositorys ```lic-fls-ansys```
 
-![Open-VSC](images/wsl_ls-folder.png)
+![Open-VSC](images/wsl-ls-001.png)
 
 If you go to your ```Visual Studio Code``` Window,
 you can list the directory in the Terminal and find
 the folder here as well:
 
-![Open-VSC](images/wsl_vsc-ls-folder.png)
+![Open-VSC](images/wsl-ls-002.png)
 
 > **COMMENT:** As I said initially, you always share
 > the Distribution in all referenced sessions. Any change
