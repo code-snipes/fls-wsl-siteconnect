@@ -1,6 +1,6 @@
 # Working with the deployment
 
-> After we accomplished the [```Deployment Steps```](README.md), We are ready to see how 
+> After we accomplished the [```Deployment Steps```](INSTALL.md), We are ready to see how 
 > to integrate it in ```Visual Studio Code``` now and work with all the parts of the deployment.
 
 - Visual Studio Code
@@ -130,10 +130,10 @@ DevOps Repository into the ```WSL``` Distribution.
 
 **Requirements:**
 - A valid SSH key, aviable as: ~/.ssh/id_rsa
-    - [Generate SSH Key](README.md#Generate-SSH-Key)
+    - [Generate SSH Key](INSTALL.md#Generate-SSH-Key)
 
 - GIT needs to be installed as well (yum):
-    - [Preparing WSL Ubuntu 18.04 LTS](README.md#Preparing-WSL-Ubuntu-1804-LTS)
+    - [Preparing WSL Ubuntu 18.04 LTS](INSTALL.md#Preparing-WSL-Ubuntu-1804-LTS)
 
 Getting the public key, use a simple ```cat``` command:
 
