@@ -131,44 +131,44 @@ Get the public part of you SSH key:
 
 Add the public part of the SSH key to you DevOps user:
 
-![Open-VSC](devops_add-ssh.key.png)
+![Open-VSC](images/devops_add-ssh.key.png)
 
-![Open-VSC](devops_ssh-keys_1.key.png)
+![Open-VSC](images/devops_ssh-keys_1.key.png)
 
-![Open-VSC](devops_ssh-keys_2.key.png)
+![Open-VSC](images/devops_ssh-keys_2.key.png)
 
-![Open-VSC](devops_ssh-keys_2.key.png)
+![Open-VSC](images/devops_ssh-keys_2.key.png)
 
 Open you DevOps Project and select the Repository you want clone
 and select the ```CLONE``` Button:
 
-![Open-VSC](devops_ssh-clone-repo.png)
+![Open-VSC](images/devops_ssh-clone-repo.png)
 
 You need to change the ```Command Line``` form ```HTTPS``` to ```SSH```
 
-![Open-VSC](devops_clone-repo_witch-to-ssh.png)
+![Open-VSC](images/devops_clone-repo_witch-to-ssh.png)
 
 Copy the SSH path:
 
-![Open-VSC](devops_clone-repo_copy-reop-url.png)
+![Open-VSC](images/devops_clone-repo_copy-reop-url.png)
 
 You are now ready to clone the Repository.
 Let's go back to the ```WSL``` Command Line and
 Clone the Repository:
 
-![Open-VSC](wsl_clone-repo.png)
+![Open-VSC](images/wsl_clone-repo.png)
 
 After the Replository finished the download, you
 will find the Repository in your home folder.
 Check it by listing the directory:
 
-![Open-VSC](wsl_ls-folder.png)
+![Open-VSC](images/wsl_ls-folder.png)
 
 If you go to you ```Visual Studio Code``` Window,
 you can list the direcoty in the Terminal and find
 the folder here as well:
 
-![Open-VSC](wsl_vsc-ls-folder.png)
+![Open-VSC](images/wsl_vsc-ls-folder.png)
 
 COMMENT: As I said at the beginning, you always share
 the Distribution in all referended sessions. Any change
