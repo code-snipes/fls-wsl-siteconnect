@@ -154,9 +154,9 @@ Follow the steps in the Microsoft document to add the SSH key and clone the Repo
 
 After the Repository finished the download, you
 will find the Repository in your home folder.
-Check it by listing the directory:
+Check it by listing the directory: ```FLS-MyPlantv2-Backend-Latest```
 
-In my example, I called one of my Repositorys ```lic-fls-ansys```
+Use your own credentilas to Clone: [```FLS-MyPlantv2-Backend-Latest```](https://dev.azure.com/FLS-GD-RnD/Fls.SiteConnect/_git/FLS-MyPlantv2-Backend-Latest) from Azure DevOps.
 
 ![Open-VSC](images/wsl-ls-001.png)
 
