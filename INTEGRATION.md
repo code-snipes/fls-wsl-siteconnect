@@ -13,6 +13,7 @@
 
 - Terminal
     - [Starting: WSL Distribution (Terminal) in parallel](#Starting-WSL-Distribution-Terminal-in-parallel)
+        -[Example: Clone a DevOps Repository](#Example-Clone-a-DevOps-Repository)
 
 - Docker Desktop
     - ```COMMING SOON```
@@ -111,14 +112,64 @@ This was the final step on ```Visual Studio Code```.
 # Starting: WSL Distribution (Terminal) in parallel
 
 Even you can not share a login session, you are able to open another session to your
-WSL Distribution and do customizations that appears in all open sessions. 
+WSL Distribution and do customizations that appears in all open sessions. Use the installed
+```Terminal``` Application from the Micorosft Store to make our life easy, and handling
+the different Distributions we might have.
 
-We use the installed ```Terminal``` Application from the Micorosft Store
-to make our life easy, and handling the different Distributions we might have.
-
-Open the ```Terminal``` Aplication and select the ```siteconnect-ubuntu-18.04``` Distibution
-to open, as shown here:
+Open the ```Terminal``` Aplication and select the ```siteconnect-ubuntu-18.04``` 
+Distibution, as shown here:
 
 ![Open-VSC](images/wsl-001.png)
 
 [BACK](#Working-with-the-deployment)
+
+## Example: Clone a DevOps Repository
+
+Get the public part of you SSH key:
+
+![Open-VSC](images/wsl_cat-ssh-pub-key.png)
+
+Add the public part of the SSH key to you DevOps user:
+
+![Open-VSC](devops_add-ssh.key.png)
+
+![Open-VSC](devops_ssh-keys_1.key.png)
+
+![Open-VSC](devops_ssh-keys_2.key.png)
+
+![Open-VSC](devops_ssh-keys_2.key.png)
+
+Open you DevOps Project and select the Repository you want clone
+and select the ```CLONE``` Button:
+
+![Open-VSC](devops_ssh-clone-repo.png)
+
+You need to change the ```Command Line``` form ```HTTPS``` to ```SSH```
+
+![Open-VSC](devops_clone-repo_witch-to-ssh.png)
+
+Copy the SSH path:
+
+![Open-VSC](devops_clone-repo_copy-reop-url.png)
+
+You are now ready to clone the Repository.
+Let's go back to the ```WSL``` Command Line and
+Clone the Repository:
+
+![Open-VSC](wsl_clone-repo.png)
+
+After the Replository finished the download, you
+will find the Repository in your home folder.
+Check it by listing the directory:
+
+![Open-VSC](wsl_ls-folder.png)
+
+If you go to you ```Visual Studio Code``` Window,
+you can list the direcoty in the Terminal and find
+the folder here as well:
+
+![Open-VSC](wsl_vsc-ls-folder.png)
+
+COMMENT: As I said at the beginning, you always share
+the Distribution in all referended sessions. Any change
+you do will be aviable right away in all connected sessions.
