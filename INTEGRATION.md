@@ -143,9 +143,10 @@ $ cat ~/.ssh/id_rsa.pub
 
 ![Open-VSC](images/wsl_cat-ssh-pub-key.png)
 
-Copy the output in you ```Clipboard```, we need it to add the Key
-to you DevOps user Account. Login to Azure DevOps and follow the 
-Steps, descibed here:
+Copy the output in you ```Clipboard``` (STRG-C), we need it to add the Key
+to you DevOps user Account later. 
+
+Follow the steps in the Microsoft document to add the SSH key and clone the Repository.
 
 [Use SSH key authentication](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops)
 
