@@ -16,11 +16,13 @@
 
 # Reposetory Content:
 
-.
-├── [```README.md```](README.md)    | This Document
-├── [```INSTALL.md```](INSTALL.md)  | Complete Setup Guide
-├── [```TUTORIAL.md```](TUTORIAL.md)| Examples and Tutorials
-└── [```LICENSE```](LICENSE)        | MIT License agreement
+| File                                | Descriptiom            |
+|:------------------------------------+:-----------------------|
+| .                                   |                        |
+| ├── [```README.md```](README.md)    | This Document          |
+| ├── [```INSTALL.md```](INSTALL.md)  | Complete Setup Guide   |
+| ├── [```TUTORIAL.md```](TUTORIAL.md)| Examples and Tutorials |
+| └── [```LICENSE```](LICENSE)        | MIT License agreement  |
 
 ## Setup Design
 
