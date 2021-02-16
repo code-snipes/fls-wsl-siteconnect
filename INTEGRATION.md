@@ -135,9 +135,9 @@ Add the public part of the SSH key to you DevOps user:
 
 ![Open-VSC](images/devops_ssh-keys_1.key.png)
 
-![Open-VSC](images/devops_ssh-keys_2.key.png)
+![Open-VSC](images/devops_ssh-key_2.key.png)
 
-![Open-VSC](images/devops_ssh-keys_2.key.png)
+![Open-VSC](images/devops_ssh-key_2.key.png)
 
 Open you DevOps Project and select the Repository you want clone
 and select the ```CLONE``` Button:
