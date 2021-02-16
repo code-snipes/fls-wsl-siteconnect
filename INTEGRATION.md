@@ -125,42 +125,35 @@ Distibution, as shown here:
 
 ## Example: Clone a DevOps Repository
 
-Get the public part of you SSH key:
+In this example I will show you how easy it is to clone a 
+DevOps Repository into the ```WSL``` Distribution. 
+
+**Requirements:**
+- A valid SSH key, aviable as: ~/.ssh/id_rsa
+    - [Generate SSH Key](README.md#Generate-SSH-Key)
+
+- GIT needs to be installed as well (yum):
+    - [Preparing WSL Ubuntu 18.04 LTS](README.md#Preparing-WSL-Ubuntu-1804-LTS)
+
+Getting the public key, use a simple ```cat``` command:
+
+```bash
+$ cat ~/.ssh/id_rsa.pub
+```
 
 ![Open-VSC](images/wsl_cat-ssh-pub-key.png)
 
-Add the public part of the SSH key to you DevOps user:
+Copy the output in you ```Clipboard```, we need it to add the Key
+to you DevOps user Account. Login to Azure DevOps and follow the 
+Steps, descibed here:
 
-![Open-VSC](images/devops_add-ssh.key.png)
-
-![Open-VSC](images/devops_ssh-keys_1.png)
-
-![Open-VSC](images/devops_ssh-key_2.png)
-
-![Open-VSC](images/devops_ssh-key-3.png)
-
-Open you DevOps Project and select the Repository you want clone
-and select the ```CLONE``` Button:
-
-![Open-VSC](images/devops_ssh-clone-repo.png)
-
-You need to change the ```Command Line``` form ```HTTPS``` to ```SSH```
-
-![Open-VSC](images/devops_clone-repo_witch-to-ssh.png)
-
-Copy the SSH path:
-
-![Open-VSC](images/devops_clone-repo_copy-reop-url.png)
-
-You are now ready to clone the Repository.
-Let's go back to the ```WSL``` Command Line and
-Clone the Repository:
-
-![Open-VSC](images/wsl_clone-repo.png)
+[Use SSH key authentication](https://docs.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops)
 
 After the Replository finished the download, you
 will find the Repository in your home folder.
 Check it by listing the directory:
+
+In my example, I conled one of my Repositorys ```lic-fls-ansys```
 
 ![Open-VSC](images/wsl_ls-folder.png)
 
@@ -170,6 +163,8 @@ the folder here as well:
 
 ![Open-VSC](images/wsl_vsc-ls-folder.png)
 
-COMMENT: As I said at the beginning, you always share
-the Distribution in all referended sessions. Any change
-you do will be aviable right away in all connected sessions.
+> **COMMENT:** As I said at the beginning, you always share
+> the Distribution in all referended sessions. Any change
+> you do will be aviable right away in all connected sessions.
+
+[BACK](#Working-with-the-deployment)

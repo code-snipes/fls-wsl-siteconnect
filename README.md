@@ -310,7 +310,6 @@ and add your SSH key.
 $ bash -c 'cat << EOF > ~/.ssh/config
 Host *
  ForwardAgent yes
- UseKeychain yes
  IdentityFile ~/.ssh/id_rsa
 EOF'
 ```
