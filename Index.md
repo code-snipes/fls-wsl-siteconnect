@@ -29,11 +29,14 @@
     - [Deoploy a Project Distribution](README.md#Deoploy-a-Project-Distribution)
 
 - [Tutorials](INTEGRATION.md)
-    - Visual Studio Code
+    - **Visual Studio Code**
         - [Starting: Visual Studio Code](INTEGRATION.md#Starting-Visual-Studio-Code)
         - [Full Integration View of WSL in Visual Studio Code](INTEGRATION.md#Full-Integration-View-of-WSL-in-Visual-Studio-Code)
-    - Terminal
+    - **Terminal**
         - [Starting: WSL Distribution (Terminal) in parallel](INTEGRATION.md#Starting-WSL-Distribution-Terminal-in-parallel)
+        - [Example: Clone a DevOps Repository](INTEGRATION.md#Example-Clone-a-DevOps-Repository)
+    - **Docker Desktop**
+        - ```COMING SOON```
 
 - [License](#license)
 - [Contact](#contact)
