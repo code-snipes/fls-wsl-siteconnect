@@ -14,15 +14,14 @@
 > - **Elements:** Postgres DB, Node.JS, Visual Studio Code, DBeaver
 > - **Engine:** Docker, Windows Subsystem for Linux (WSL)
 
-# Reposetory Content:
+# Content:
 
-| File                                | Descriptiom            |
-|:------------------------------------+:-----------------------|
-| .                                   |                        |
-| ├── [```README.md```](README.md)    | This Document          |
-| ├── [```INSTALL.md```](INSTALL.md)  | Complete Setup Guide   |
-| ├── [```TUTORIAL.md```](TUTORIAL.md)| Examples and Tutorials |
-| └── [```LICENSE```](LICENSE)        | MIT License agreement  |
+| File                            | Descriptiom            |
+|:--------------------------------|:-----------------------|
+| [```README.md```](README.md)    | This Document          |
+| [```INSTALL.md```](INSTALL.md)  | Complete Setup Guide   |
+| [```TUTORIAL.md```](TUTORIAL.md)| Examples and Tutorials |
+| [```LICENSE```](LICENSE)        | MIT License agreement  |
 
 ## Setup Design
 
