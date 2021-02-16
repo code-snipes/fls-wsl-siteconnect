@@ -342,7 +342,7 @@ default=siteconnect
 EOF'
 ```
 
-After applying, **exit** the Distribution and **terminate** it with the following command:
+After applying, ```exit``` the Distribution and ```terminate``` it with the following command:
 ```pws
 PS C:\> wsl.exe --terminate siteconnect-ubuntu-18.04
 ```
@@ -350,7 +350,7 @@ PS C:\> wsl.exe --terminate siteconnect-ubuntu-18.04
 > !!!! IMPORTANT !!!!
 >
 > If you change/add settings to the config file **/etc/wsl.conf**, the Distribution needs to get
-> **terminated** after exit. Termination does a complete shutdown of the WSL Distribution. If you reconnect 
+> **terminated** after ```exit```. Termination does a complete shutdown of the WSL Distribution. If you reconnect 
 > to it, it is like after a reboot. The settings in the configuration file get applied by this reboot.
 
 Restart the ```siteconnect-ubuntu-18.04``` Distribution by type:
@@ -373,15 +373,17 @@ I followed the description on:
 Here the long story short:
 ```bash
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-$ bash
-$ nvm install node
-$ nvm install --lts
 ```
 
-Besides, I installed the Postgress extension:
+Finish the installation by ```exit``` the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
+
 ```bash
-$ npm install pg
+$ nvm install node
+$ nvm install --lts
+$ nvm install 10.5.0
 ```
+
+You finisehd the installation of ```Node.JS``` in your WSL Distribution.
 
 [BACK](#Deployment-Steps)
 
@@ -391,26 +393,25 @@ Before we check the setup with Visual Studio Code, we need to set the Database c
 
 Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) **DATABASE_URL** in **.bashrc** (siteconnect user only):
 ```bash
-$ GATEWAY_IP=`ip route show | awk '{print $3}' | head -n 1`
 $ cat << EOF >> ~/.bashrc
-export DATABASE_URL=postgresql://siteconnect:siteconnect@${GATEWAY_IP}:5432/siteconnect
+export DATABASE_URL=postgresql://siteconnect:siteconnect@localhost:5432/siteconnect
 EOF
 $ bash
 ```
 
 > EXPLAINATION:
-> Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely.
-> This means we need to point it to the Gateway IP of the WSL environment. Adding **DATABASE_URL**
-> to the **.bashrc** keeps it persistent.
+> Form the ```siteconnect-ubuntu-18.04``` Distribution, the Database (postgres) runs externely
+> but on the same host (your PC). Connecting to the DB, we set the database server to ```localhost```
+> and adding **DATABASE_URL** to the **.bashrc** keeps it persistent.
 
-Verify the variable by **exit** the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
+Verify the variable by ```exit``` the ```siteconnect-ubuntu-18.04``` Distribution and restart it.
 
 Check it with:
 ```bash
 $ echo $DATABASE_URL
 ```
 
-This shold output: ```postgresql://siteconnect:siteconnect@<YourGatewayIP>:5432/siteconnect```
+This shold output: ```postgresql://siteconnect:siteconnect@localhost:5432/siteconnect```
 
 You can check your success by testing the database connection.
 
@@ -420,7 +421,7 @@ connections to the Postgress Database Server, running in the Docker Container.
 **With the native Postgress client:**
 
 ```bash
-$ psql -h `ip route show | awk '{print $3}' | head -n 1` -p 5432 -U siteconnect
+$ psql -h localhost -p 5432 -U siteconnect
 ```
 
 **With a smiple connection script (Node.JS) including the ```DATABASE_URL``` Variable:**
