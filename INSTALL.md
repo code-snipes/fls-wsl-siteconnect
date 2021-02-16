@@ -26,7 +26,7 @@
     - [Set up Node.JS](#Set-up-NodeJS)
     - [Postrgres Database Connect](#Postgres-Database-Connect)
 
-[BACK to the ```README```](README.md)
+[BACK TO THE ```README```](README.md)
 
 # Prerequistes
 
