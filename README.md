@@ -31,7 +31,7 @@
 
 ## Overview
 
-> I highly recommended reading his Visual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
+> I highly suggest reading his Visual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
 > before you move on with the deployment as described below. It gives you a good overview of the possibilities
 > you get with WSL (Windows Subsystem for Linux) as part of your Development Environment.
 > It also contains even more information by talking about Docker Containers, what makes your Development Environment
