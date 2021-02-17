@@ -31,7 +31,7 @@
 
 ## Overview
 
-> I highley recommended to read his Vistual Studio Code Guite for Developers [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl)
+> I highley recommended to read his Vistual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
 > before you move on with the deployment. It gives you a view on the posibilties
 > you get if you work with WSL and even more by using a more agnostic tool like Docker containers.
 
