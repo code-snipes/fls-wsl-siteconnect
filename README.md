@@ -31,11 +31,11 @@
 
 ## Overview
 
-> I highley recommended to read his Vistual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
-> before you move on with the deployment as discribed below. It gives you a good overview on the posibilties
+> I highly recommended reading his Visual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
+> before you move on with the deployment as described below. It gives you a good overview of the possibilities
 > you get with WSL (Windows Subsystem for Linux) as part of your Development Environment.
-> It also conains even more information by talking about Docker Containers, what makes you Development Environment
-> more OS agnosric.
+> It also contains even more information by talking about Docker Containers, what makes your Development Environment
+> more OS agnostic.
 
 - [Install Development Environment](INSTALL.md)
     - [Prerequistes](INSTALL.md#Prerequistes)
