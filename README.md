@@ -32,8 +32,10 @@
 ## Overview
 
 > I highley recommended to read his Vistual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
-> before you move on with the deployment. It gives you a view on the posibilties
-> you get if you work with WSL and even more by using a more agnostic tool like Docker containers.
+> before you move on with the deployment as discribed below. It gives you a good overview on the posibilties
+> you get with WSL (Windows Subsystem for Linux) as part of your Development Environment.
+> It also conains even more information by talking about Docker Containers, what makes you Development Environment
+> more OS agnosric.
 
 - [Install Development Environment](INSTALL.md)
     - [Prerequistes](INSTALL.md#Prerequistes)
