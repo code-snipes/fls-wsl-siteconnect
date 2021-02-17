@@ -13,6 +13,12 @@
 > - **Project:** ```SiteConnect```
 > - **Elements:** Postgres DB, Node.JS, Visual Studio Code, DBeaver
 > - **Engine:** Docker, Windows Subsystem for Linux (WSL)
+> 
+> I highly suggest reading his Visual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
+> before you move on with the deployment as described below. It gives you a good overview of how it works, and the possibilities
+> you get with WSL (Windows Subsystem for Linux) as part of your Development Environment.
+> It also contains even more information by talking about Docker Containers, what makes your Development Environment
+> more OS agnostic.
 
 # Content:
 
@@ -30,12 +36,6 @@
 </p>
 
 ## Overview
-
-> I highly suggest reading his Visual Studio Code Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl),
-> before you move on with the deployment as described below. It gives you a good overview of how it works, and the possibilities
-> you get with WSL (Windows Subsystem for Linux) as part of your Development Environment.
-> It also contains even more information by talking about Docker Containers, what makes your Development Environment
-> more OS agnostic.
 
 - [Install Development Environment](INSTALL.md)
     - [Prerequistes](INSTALL.md#Prerequistes)
