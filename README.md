@@ -31,8 +31,7 @@
 
 ## Overview
 
-Recommended Guite for Developers: 
-- [Developing in WSL](https://code.visualstudio.com/docs/remote/wsl)
+Recommended Guite for Developers: [```Developing in WSL```](https://code.visualstudio.com/docs/remote/wsl)
 
 - [Install Development Environment](INSTALL.md)
     - [Prerequistes](INSTALL.md#Prerequistes)
