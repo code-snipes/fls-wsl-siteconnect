@@ -309,11 +309,11 @@ if you do a "chain-login" to another host on SSH. Let's create a config file
 and add your SSH key.
 
 ```bash
-$ bash -c 'cat << EOF > ~/.ssh/config
+$ cat << EOF > ~/.ssh/config
 Host *
  ForwardAgent yes
  IdentityFile ~/.ssh/id_rsa
-EOF'
+EOF
 ```
 
 Using the ```-A``` option to forward the key to another SSH session,
@@ -381,22 +381,7 @@ Finish the installation by ```exit``` the ```siteconnect-ubuntu-18.04``` Distrib
 
 ```bash
 $ nvm install node
-$ nvm install --lts
 $ nvm install 10.5.0
-$ nvm use 10.5.0
-```
-Install Extentions with referenz to: [```KNEX.JS```](http://knexjs.org)
-```bash
-$ npm install knex --save
-```
-Then add one of the following (adding a --save) flag:
-```bash 
-$ npm install pg
-$ npm install sqlite3
-$ npm install mysql
-$ npm install mysql2 
-$ npm install oracledb
-$ npm install mssql
 ```
 
 You finisehd the installation of ```Node.JS``` in your WSL Distribution.
