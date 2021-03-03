@@ -397,7 +397,6 @@ Login to the ```siteconnect-ubuntu-18.04``` Distribution and set (export) **DATA
 $ cat << EOF >> ~/.bashrc
 export DATABASE_URL=postgresql://siteconnect:siteconnect@localhost:5432/siteconnect
 EOF
-$ bash
 ```
 
 > EXPLAINATION:
