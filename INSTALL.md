@@ -239,7 +239,7 @@ PS C:\> wsl.exe --list --verbose
 The Output of this command should show you something like:
 ```bash
 NAME STATE VERSION
-* siteconnect-ubuntu-18.04 Running 2
+*siteconnect-ubuntu-18.04 Running 2
  docker-desktop-data Running 2
  Ubuntu-18.04 Stopped 2
  docker-desktop Running 2
