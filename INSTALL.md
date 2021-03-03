@@ -293,7 +293,7 @@ I always recommend the highest possible protection but in the real world,
 especially by automated processes, and SSH Key without the password is handier than with a Key Password.
 
 ```bash
-$ ssh-keygen -t rsa -b 4096 -C "siteconnect"
+$ ssh-keygen -t rsa -b 4096 -C "wsl@siteconnect"
 ```
 
 Alternatively, you can also use an already created SSH key
