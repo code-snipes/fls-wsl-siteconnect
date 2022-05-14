@@ -108,3 +108,4 @@ dist
 *.config.yaml
 *.config.yaml
 *.config.sh
+*.config.txt
